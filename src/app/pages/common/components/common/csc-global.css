@@ -1,0 +1,18 @@
+.form-control.ng-touched.ng-invalid {
+    border-left: 5px solid red;
+}
+
+.ng-invalid:not(form):not(div):not(ba-card-details):not(ba-collection-details):not(period-details):not(gen-simple-input) {
+  border-left: 5px solid red;
+}
+
+.spinner-overlay{
+  padding: 6px;
+  position: absolute;
+  margin: -29px 00 0 47%;
+}
+
+.fw {
+  width: 1.3em;
+  text-align: left;
+}
