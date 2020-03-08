@@ -1,0 +1,63 @@
+<form [ngClass]="['full-width d-flex flex-shrink-1 flex-grow-1', cardClass || '']">
+  <ba-card [baCardClass]="isOpenedHeader ? 'full-width' : 'full-width'"
+           [ngClass]="[isOpenedHeader ? 'd-flex' : '', 'full-width', 'flex-shrink-1', 'flex-grow-1']"
+           [title]="title | translate"
+           [collectionHeader]="true"
+           [openCloseHeader]="openCloseHeader"
+           [actions]="actions"
+           [openedHeader]="isOpenedHeader"
+           (onAction)="handleAction($event)"
+           (onClickEvent)="showHideDetails()">
+    <div [hidden]="!isOpenedHeader"
+         class="col-12">
+      <div [ngSwitch]="content.type">
+        <div *ngSwitchCase="'tree'"
+             class="tree">
+          <gen-tree-explorer [nodes]="content.tree.nodes"
+                             [add]="content.tree.add"
+                             [delete]="content.tree.delete"
+                             [hasChildNodes]="content.tree.hasChildNodes"
+                             [nodeToDisplay]="content.tree.nodeToDisplay"
+                             [customCSS]="content.tree.customCSS"
+                             [display]="content.tree.display"
+                             (selectedNode)=handleSelectedNode($event)></gen-tree-explorer>
+        </div>
+        <div *ngSwitchDefault>
+          <gen-content-container [displayMode]="displayMode"
+                                 [config]="{list:content.fields, tabs:content.tabs, selectedTab: content.selectedTab}"
+                                 [cards]="cards"
+                                 [collection]="collection"
+                                 [database]="database"
+                                 [collectionId]="collectionId"
+                                 [originalCollection]="originalCollection"
+                                 [styling]="'form-group'"
+                                 [communicationService]="communicationService"
+                                 (contentEvent)="update($event)"
+                                 (selectedFilterEvent)= tabsChangeEmit($event)>
+          </gen-content-container>
+        </div>
+      </div>
+      <!-- <gen-simple-inputs *ngIf="content && content.type === 'simpleInputs'"
+                         class="col-12"
+                         [parentId]="parentId"
+                         [displayMode]="displayMode"
+                         [cards]="cards"
+                         [database]="database"
+                         [collectionId]="collectionId"
+                         [collection]="collection"
+                         [originalCollection]="originalCollection"
+                         [content]="content"
+                         [columnSize]="columnSize"
+                         (onShowDetails)="showDetails($event)">
+      </gen-simple-inputs>
+      <gen-tree-explorer *ngIf="content &&  content.type === 'tree'"
+                         [nodes]="content.tree.nodes"
+                         [add]="content.tree.add"
+                         [delete]="content.tree.delete"
+                         [hasChildNodes]="content.tree.hasChildNodes"
+                         [customCSS]="content.tree.customCSS"
+                         [display]="content.tree.display"
+                         (selectedNode)=handleSelectedNode($event)></gen-tree-explorer>-->
+    </div>
+  </ba-card>
+</form>

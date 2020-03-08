@@ -8,7 +8,7 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { MyDatePickerModule } from 'mydatepicker';
-import { NgxEchartsModule } from 'ngx-echarts';
+// import { NgxEchartsModule } from 'ngx-echarts';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 
 import {

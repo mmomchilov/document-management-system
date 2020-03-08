@@ -1,0 +1,26 @@
+<form [ngClass]="[panelInTheMiddle ? 'al-content-middle' : 'al-content']"
+      class="row">
+  <gen-card-detail *ngFor="let config of configs; let i = index"
+                   [ngClass]="['col-' + config.columnSize, 'd-flex', 'flex-shrink-1']"
+                   [parentId]="id+'_'"
+                   [displayMode]="config.displayMode ? config.displayMode : displayMode"
+                   [cards]="cards"
+                   [database]="database"
+                   [collectionId]="collectionId"
+                   [collection]="collection"
+                   [originalCollection]="originalCollection"
+                   [title]="config.title"
+                   [openCloseHeader]="allowExpandCollapse(config)"
+                   [isOpenedHeader]="config.isOpenedHeader"
+                   [id]="getCardId(config, i)"
+                   [cardClass]="config.cardClass"
+                   [actions]="config.actions"
+                   [content]="config.content"
+                   [columnSize]="config.columnSize"
+                   [minContentHeight]="config.minContentHeight ? config.minContentHeight : null"
+                   [communicationService]="communicationService"
+                   (onShowDetails)="showDetails($event)"
+                   (selectedNode)="handleSelectedNode($event)"
+                   (tabsChange)="handleTabs($event)">
+  </gen-card-detail>
+</form>
