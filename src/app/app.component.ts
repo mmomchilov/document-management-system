@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { ValidationComponent } from './pages/common/components/common/validation';
+import { Component, OnInit, ChangeDetectorRef, DoCheck, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent extends ValidationComponent // implements OnInit, DoCheck, OnDestroy
+{
   title = 'document-management-system right?';
   configs = [
     {
@@ -18,7 +20,7 @@ export class AppComponent {
           {
             "field": "financialFlowsTab",
             "filterName": "financialFlows",
-            "label": "Financial flows on accounting year 2020"
+            "label": "Financial flows on accounting year 2020 MIMI"
           },
           {
             "field": "healthDashboardsTab",

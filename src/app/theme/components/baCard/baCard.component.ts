@@ -17,7 +17,7 @@ export class BaCard {
   @Input() collectionHeader: boolean;
   @Input() openCloseHeader: boolean;
   @Input() openedHeader: boolean;
-  @Input() actions = {};
+  @Input() actions = { delete: false, add: false };
   @Input() selectedItem: any;
   @Output() onClickEvent = new EventEmitter();
   @Output() onAction = new EventEmitter();

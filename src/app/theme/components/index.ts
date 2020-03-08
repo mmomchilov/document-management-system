@@ -8,8 +8,8 @@
 // export * from './baEChartFree';
 // export * from './inputs/selectItems';
 // export * from './inputs/searchItems';
-// export * from './translation';
-// export * from './baCard';
+export * from './translation';
+export * from './baCard';
 // export * from './baCard2';
 // export * from './customCard';
 // export * from './collectionDetails/cardDetails';
