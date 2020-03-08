@@ -3,7 +3,7 @@ import { FormArray, FormGroup } from '@angular/forms';
 import { ContentConfiguration } from './contentConfiguration';
 import { ContainerCommunication } from './containerCommunication.service';
 import { CollectionService } from '../cardDetail/collectionService';
-// import { WidgetConfiguration } from '../cardDetail/configurationClasses/widgetConfiguration';
+import { WidgetConfiguration } from '../cardDetail/configurationClasses/widgetConfiguration';
 
 @Component({
   selector: 'gen-content-container',

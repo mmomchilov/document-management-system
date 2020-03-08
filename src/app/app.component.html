@@ -521,6 +521,16 @@
 
 </div>
 
+<gen-card-container
+    [displayMode]="'r'" 
+    [configs]="configs" 
+    [parentForm]="formGroup" 
+    [database]="database"
+    [collectionId]="collectionId" 
+    [collection]="'juridicalEntity'"
+    (tabsChange)=tabsChange($event)>
+</gen-card-container>
+
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->

@@ -1,0 +1,27 @@
+<div baCardBlur
+     class="card {{cardType}} {{baCardClass || ''}} d-flex flex-shrink-1 flex-grow-1"
+     [ngClass]="{'fadeIn': !fadeIn}"
+     [ngStyle]="{'background-color': bgColor}">
+  <div *ngIf="title"
+       class="row card-header m-0"
+       [ngClass]="{'collectionHeader': collectionHeader}"
+       [ngStyle]="{'background-color': titleBgColor}"
+       (click)="handleClick($event)">
+    <h3 class="col-12 card-title" [ngClass]="{'text-center':centerTitle === true}">
+      <div *ngIf="(openCloseHeader==true) && (openedHeader==false)"      
+           class="spaceHeader fa fa-chevron-right"></div>
+      <div *ngIf="(openCloseHeader==true) && (openedHeader==true)"
+           class="spaceHeader fa fa-chevron-down"></div>
+      <span [innerHTML]="title"></span>
+      <i *ngIf="actions && actions.delete"
+         (click)="handleAction('delete')"
+         [ngClass]="'fa fa-remove pull-right'"></i>
+      <i *ngIf="actions && actions.add"
+         (click)="handleAction('add')"
+         [ngClass]="'fa fa-plus pull-right'"></i>
+    </h3>
+  </div>
+  <div class="card-body">
+    <ng-content></ng-content>
+  </div>
+</div>
