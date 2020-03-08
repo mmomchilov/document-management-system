@@ -1,0 +1,28 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h4 *ngIf="modalHeader"
+        class="modal-title">{{detailsTitle}}</h4>
+    <button class="close"
+            aria-label="Close"
+            (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div *ngFor="let collection of selectedItemList">
+      <h2>{{'localizationResource.common.' + collection + '.shortLabel' | translate}}</h2>
+      <div *ngIf="isCollectionReady">
+        <ng2-smart-table class="collectionTable smart-table-cursor"
+                         [settings]="getSettings(collection)"
+                         [source]="customCollectionDataSource"
+                         (userRowSelect)="navigateToEntityPage($event);">
+        </ng2-smart-table>
+      </div>
+      <div *ngIf="!isCollectionReady">
+        {{ "localizationResource.index.noresult.longLabel" | translate }}
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+  </div>
+</div>

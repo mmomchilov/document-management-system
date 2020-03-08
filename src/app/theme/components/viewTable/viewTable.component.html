@@ -1,0 +1,17 @@
+<!-- <ba-monitoring *ngIf="hasMonitoring"
+               [collectionId]="collectionId"
+               [idValue]="id"
+               (process)="onProcess($event)"
+               (refresh)="onRefresh($event)"></ba-monitoring> -->
+
+                <pre>settings:  {{settings|json}}</pre> -->
+<ng2-smart-table id="{{id}}"
+                 class="collectionTable smart-table-cursor"
+                 [settings]="settings"
+                 [source]="entitySource"
+                 (custom)="onCustomAction($event)"
+                 (editConfirm)="edit($event)"
+                 (createConfirm)="addNew($event)"
+                 (deleteConfirm)="delete($event)"
+                 (userRowSelect)="selectRow($event)">
+</ng2-smart-table>

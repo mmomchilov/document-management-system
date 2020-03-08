@@ -37,7 +37,7 @@ export * from './baCard';
 export * from './addRemoveTable/addRemoveList';
 // export * from './periodDetails';
 // export * from './entityViewTable';
-// export * from './viewTable';
+export * from './viewTable';
 export * from './cardContainer';
 export * from './contentContainer';
 export * from './cardDetail';

@@ -91,7 +91,7 @@ import {
   //   ExpandCollapseComponent,
   //   PanelViewComponent,
   //   EntityViewTableComponent,
-  //   ViewTableComponent,
+  ViewTableComponent,
   //   TreeViewComponent,
   //   TreeNodeComponent,
   //   TreeExplorerComponent,
@@ -139,6 +139,9 @@ import {
   // TranslationLoaderService,
   // UserPerfsService
 } from './services/jsonPath';
+import { SearchService } from './services/search';
+
+
 
 import { CollectionService } from './components/cardDetail/collectionService';
 
@@ -218,7 +221,7 @@ const NGA_COMPONENTS = [
   // TreeViewComponent,
   // TreeNodeComponent,
   // TreeExplorerComponent,
-  // ViewTableComponent,
+  ViewTableComponent,
   AddRemoveListComponent,
   CardContainerComponent,
   CardDetailComponent,
@@ -255,7 +258,8 @@ const NGA_SERVICES = [
   // TranslationLoaderService,
   // UserPerfsService,
   CollectionService,
-  JsonPath
+  JsonPath,
+  SearchService
 ];
 
 const NGA_VALIDATORS = [];

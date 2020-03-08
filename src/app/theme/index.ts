@@ -12,6 +12,9 @@
 //   RejectionByTypologyService,  ////////////////
 //   UserPerfsService, JsonListService, MessageConfigurationService, ErrorService
 // } from './services';
+
+// export SearchService from './services';
+
 export * from './theme.constants';
 export * from './theme.configProvider';
 export * from './theme.config';

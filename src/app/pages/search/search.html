@@ -1,0 +1,10 @@
+<div class="al-content">
+  <div class="row">
+    <ba-card *ngFor="let collection of collections" class="col-xlg-6 col-xl-6 col-lg-6 col-12" title="{{'localizationResource.common.' + collection + '.shortLabel' | translate}}" baCardClass="with-scroll table-panel collection" collectionHeader="true"
+      (onClickEvent)="showContextualSearchModal(collection)">
+      <ng2-smart-table class="col-12 collectionTable smart-table-cursor" [settings]="getLimitedSettings(collection)" [source]="dataSourceList[collection]" (userRowSelect)="navigateToEntityPage($event)">
+      <!-- <ng2-smart-table class="col-12 collectionTable" [settings]="getLimitedSettings(collection)" [source]="dataSourceList[collection]"> -->
+      </ng2-smart-table>
+    </ba-card>
+  </div>
+</div>

@@ -1,0 +1,242 @@
+@import "../../theme/sass/conf/conf";
+
+.modal-title {
+  color: #000000;
+}
+
+.fullWidthModal {
+  .modal-dialog {
+    max-width: none !important;
+    min-width: max-content;
+  }
+  // margin: 30px;
+}
+
+.card-header.collectionHeader:hover {
+  color: $primary;
+  cursor: pointer;
+  background-color: $primary;
+}
+
+.collection {
+  height: 200px;
+  overflow-y: auto;
+}
+
+.card.collection {
+  height: 500px;
+  overflow-x: auto;
+}
+
+.collectionTable {
+  height: 200px;
+}
+
+.ng2-smart-table-container table.ng2-smart-table {
+  td,
+  th {
+    border: 1px solid $border-light !important;
+    line-height: 35px;
+    vertical-align: middle;
+  }
+  max-height: 200px;
+  color: $default-text;
+
+  input {
+    line-height: 1.5 !important;
+  }
+
+  tbody {
+    tr:hover {
+      background: rgba(0, 0, 0, 0.20);
+    }
+    max-height: 200px;
+  }
+
+  a.ng2-smart-sort-link {
+    font-size: 14px !important;
+    color: $default-text;
+    font-weight: $font-bolder;
+
+    &.sort {
+      font-weight: $font-bolder !important;
+
+      &::after {
+        border-bottom-color: $default-text !important;
+      }
+    }
+  }
+
+  .ng2-smart-actions {
+    width: 70px;
+    text-align: center;
+
+    .actions {
+      float: none;
+      text-align: center;
+    }
+  }
+
+  a.ng2-smart-action {
+    font-size: 14px !important;
+    color: $default-text;
+    padding: 0 5px;
+    display: inline-block;
+
+    &.ng2-smart-action-add-add {
+      font-size: 25px !important;
+    }
+  }
+}
+
+nav.ng2-smart-pagination-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.basic-btns {
+  padding-top: 8px;
+  margin-bottom: -8px;
+
+  h5 {
+    line-height: 35px;
+    font-size: 12px;
+
+    &.row-sm {
+      line-height: 30px;
+    }
+
+    &.row-xs {
+      line-height: 22px;
+    }
+  }
+
+  & > .row {
+    padding-bottom: 4px;
+  }
+}
+
+.btns-row {
+  & > div {
+    margin-bottom: 12px;
+  }
+}
+
+.btns-same-width-sm {
+  .btn {
+    width: 48px;
+  }
+}
+
+.btns-same-width-md {
+  .btn {
+    width: 79px;
+  }
+}
+
+.btns-same-width-lg {
+  .btn {
+    width: 112px;
+  }
+}
+
+ul.btn-list {
+  margin: 0 0 0 -18px;
+  padding: 6px 0 0;
+  clear: both;
+
+  li {
+    margin: 0 0 12px 18px;
+    padding: 0;
+    list-style: none;
+    float: left;
+  }
+}
+
+.btn-group-wrapper {
+  margin-bottom: 12px;
+}
+$btn-icon-size: 34px;
+
+.btn-icon {
+  width: $btn-icon-size;
+  height: $btn-icon-size;
+  line-height: $btn-icon-size;
+  padding: 0;
+  text-align: center;
+}
+
+.btn-group-example {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 12px;
+}
+
+.btn-toolbar-example {
+  float: left;
+}
+
+.progress-buttons-container {
+  text-align: center;
+  font-size: 16px;
+
+  span.button-title {
+    display: inline-block;
+    width: 100%;
+    line-height: 1;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .row + .row {
+    margin-top: 30px;
+  }
+}
+
+.button-panel {
+  height: 315px;
+
+  .btn {
+    width: 150px;
+  }
+}
+
+.large-buttons-panel {
+  height: 202px;
+}
+
+.button-panel.df-size-button-panel {
+  .btn-xs {
+    width: 60px;
+  }
+
+  .btn-sm {
+    width: 90px;
+  }
+
+  .btn-mm {
+    width: 120px;
+  }
+
+  .btn-md {
+    width: 150px;
+  }
+
+  .btn-xm {
+    width: 175px;
+  }
+
+  .btn-lg {
+    width: 200px;
+  }
+}
+
+.button-wrapper {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.btn-group.flex-dropdown {
+  display: flex;
+}

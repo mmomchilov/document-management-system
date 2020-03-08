@@ -76,9 +76,12 @@ export class ContentContainerComponent implements OnInit, OnChanges {
 
   // Smart Table
   getTableSettings(config) {
+   // console.log('config config', config);
+    // console.log('config log', config);
     if (typeof config.settings === 'function') {
       config.settings = config.settings(this.collection);
     }
+    console.log('config.settings', config.settings);
     return config.settings;
   }
   private applyDefaultTableItems(config: any): void {

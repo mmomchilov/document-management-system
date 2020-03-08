@@ -1,0 +1,1 @@
+export * from './viewTable.component';
