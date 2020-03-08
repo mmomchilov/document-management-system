@@ -1,0 +1,64 @@
+my-date-picker.ng-invalid {
+    border-left: 5px solid red;
+}
+
+input.ng-invalid {
+    border-left: 5px solid red;
+}
+
+select.ng-invalid {
+    border-left: 5px solid red;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.form-control[disabled] {
+	background-color: #EEE;
+}
+
+input[type="radio"]:disabled {
+	background-color: #EEE;
+}
+
+label.custom-radio > input:disabled + span {
+	color: #626262
+}
+
+label.custom-radio > input[type="radio"].ng-invalid + span:before {
+    border: 1px solid #f40404;
+}
+
+.control-label.required:after {
+    color: #d00;
+    content: "*";
+    position: inherit;
+    margin-left: 4px;
+    top: 0;
+}
+
+.tabs .nav.nav-tabs {
+  color: #626262;
+  background-color: #FFF;
+}
+
+.tabs .nav.nav-tabs >li.active {
+    background-color: #FFF;
+    border-bottom: 1px solid #48B0F3 !important;
+    cursor: auto;
+}
+.tabs .nav.nav-tabs >li {
+    border-bottom: 1px solid #000 !important;
+}
+
+.tabs .nav.nav-tabs > li.active > a {
+  color: #48B0F3;
+  background-color: #FFF;
+  cursor: auto;
+}
+
+.tabs a.nav-link:hover {
+  background-color: #FFF !important;
+}

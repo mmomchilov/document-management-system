@@ -1,0 +1,18 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th *ngFor="let column of getColumns()" >{{ column.label | translate }}</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let item of items"
+      [class.active]="item === selectedItem"
+      (click)="showDetail(item)"
+      (dbclick)="showDetail(item)">
+    <td *ngFor="let element of elements">
+      <span *ngIf="item[element.field] === undefined" [ngStyle]="{'white-space': 'pre'}">   </span>
+      <span *ngIf="element.type === 'date'">{{ formatDate(item[element.field], 'dd/MM/yyyy') }}</span>
+      <span *ngIf="element.type === 'select'">{{ getEnumValue(element, item) | translate }}</span>
+      <span *ngIf="element.type !== 'date' && element.type !== 'select'">{{ item[element.field] }}</span>
+    </td>
+  </tr>
+</table>

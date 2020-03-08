@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges, OnChange
 import { FormGroup, FormArray } from '@angular/forms';
 import { CardConfiguration } from '../cardDetail/configurationClasses/cardConfiguration';
 import { ContainerCommunication } from '../contentContainer/containerCommunication.service';
+import { NgaModule } from '../../../theme/nga.module';
 
 @Component({
   selector: 'gen-card-container',

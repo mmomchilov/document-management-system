@@ -13,14 +13,14 @@
       <div [ngSwitch]="content.type">
         <div *ngSwitchCase="'tree'"
              class="tree">
-          <gen-tree-explorer [nodes]="content.tree.nodes"
+          <!-- <gen-tree-explorer [nodes]="content.tree.nodes"
                              [add]="content.tree.add"
                              [delete]="content.tree.delete"
                              [hasChildNodes]="content.tree.hasChildNodes"
                              [nodeToDisplay]="content.tree.nodeToDisplay"
                              [customCSS]="content.tree.customCSS"
                              [display]="content.tree.display"
-                             (selectedNode)=handleSelectedNode($event)></gen-tree-explorer>
+                             (selectedNode)=handleSelectedNode($event)></gen-tree-explorer> -->
         </div>
         <div *ngSwitchDefault>
           <gen-content-container [displayMode]="displayMode"
@@ -37,7 +37,7 @@
           </gen-content-container>
         </div>
       </div>
-      <!-- <gen-simple-inputs *ngIf="content && content.type === 'simpleInputs'"
+       <gen-simple-inputs *ngIf="content && content.type === 'simpleInputs'"
                          class="col-12"
                          [parentId]="parentId"
                          [displayMode]="displayMode"
@@ -50,7 +50,7 @@
                          [columnSize]="columnSize"
                          (onShowDetails)="showDetails($event)">
       </gen-simple-inputs>
-      <gen-tree-explorer *ngIf="content &&  content.type === 'tree'"
+   <!--   <gen-tree-explorer *ngIf="content &&  content.type === 'tree'"
                          [nodes]="content.tree.nodes"
                          [add]="content.tree.add"
                          [delete]="content.tree.delete"

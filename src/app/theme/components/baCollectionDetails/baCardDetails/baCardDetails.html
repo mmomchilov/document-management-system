@@ -1,0 +1,141 @@
+<ba-card class="fixedHeight"
+         title="{{title | translate}}"
+         [collectionHeader]="true"
+         [openCloseHeader]="true"
+         [openedHeader]="isOpenedHeader"
+         (onClickEvent)="showHideDetails()">
+  <div *ngIf="isOpenedHeader">
+    <div *ngIf="type === 'address'">
+      <postal-address-list [addresses]="card"
+                           [isOpen]="false"
+                           [database]="database"
+                           [collectionId]="collectionId"></postal-address-list>
+    </div>
+    <div *ngIf="type != 'address' && formGroup.controls!= 'undefined'">
+      <tabset justified="true"
+              [type]="'tabs'"
+              class="tabs">
+        <div *ngFor="let line of card; let i = index"
+             class="row">
+          <div *ngFor="let element of line; let j = index"
+               class="{{ !element.hide ? 'form-group col-' + element.columnSize : ''}}">
+            <tab *ngIf="element.type === 'tab'"
+                 [heading]="element.label | translate"
+                 [id]="element.field"
+                 (selectTab)="selectElement(element, $event, j)"
+                 [disabled]="formGroup.invalid && !element.active"
+                 [active]="element.active"></tab>
+            <label *ngIf="!element.hide && !element.hideLabel"
+                   [ngClass]="[(!isViewMode() && element.validators && element.validators.includes(_required))? 'required' : '']"
+                   [hidden]="isHidden(element)"
+                   class="control-label">{{'localizationProperty.' + database + '.' + collectionId + '.' + element.label + '.shortLabel' | translate
+                        }}
+            </label>
+            <div *ngIf="element.type === 'date' && !element.hide">
+              <my-date-picker [locale]="locale"
+                              [options]="myDatePickerOptions"
+                              class="form-control date-picker {{element.class}}"
+                              [formControl]="formGroup.controls[element.field]"
+                              (ngModelChange)="onChangeValue(element, $event, null)"></my-date-picker>
+              <span [hidden]="!formErrors[element.field]">
+                <label>{{formErrors[element.field]}}</label>
+              </span>
+            </div>
+            <div *ngIf="element.type ==='input' && !element.hide"
+                 [hidden]="isHidden(element)"
+                 class="{{element.blockClass}}">
+              <input class="form-control {{element.class}}"
+                     type="element.type"
+                     [formControl]="formGroup.controls[element.field]"
+                     (focus)="focus(element, $event)"
+                     (focusout)="focusOut(element, $event)"
+                     (ngModelChange)="onChangeValue(element, $event, null)"
+                     name="{{element.field}}" />
+              <span [hidden]="!formErrors[element.field]">
+                <label>{{formErrors[element.field]}}</label>
+              </span>
+            </div>
+            <div *ngIf="element.type === 'comment' && !element.hide"
+                 [hidden]="isHidden(element)">
+              <textarea class="form-control"
+                        type="element.type"
+                        (ngModelChange)="onChangeValue(element, $event, null)"
+                        [disabled]="disabledDisplay(element.enableDisplay)"
+                        name="{{element.field}}"></textarea>
+              <span [hidden]="!formErrors[element.field]">
+                <label>{{formErrors[element.field]}}</label>
+              </span>
+            </div>
+            <div *ngIf="element.type === 'select' && !element.hide"
+                 [hidden]="isHidden(element)">
+              <select class="form-control {{element.class}}"
+                      type="element.type"
+                      (ngModelChange)="onChangeValue(element, $event, null)"
+                      [formControl]="formGroup.controls[element.field]"
+                      name="{{element.field}}">
+                <option *ngFor="let option of element.options"
+                        [value]="option.code">
+                  {{ option.label | translate }}
+                </option>
+              </select>
+              <span [hidden]="!formErrors[element.field]">
+                <label>{{formErrors[element.field]}}</label>
+              </span>
+            </div>
+            <div *ngIf="element.type==='checkbox' && !element.hide"
+                 [hidden]="isHidden(element)">
+              <div *ngFor="let option of element.options; let i = index">
+                <label>
+                  <input type="checkbox"
+                         name="{{element.field}}"
+                         value="{{option.code}}"
+                         class="{{element.class}}"
+                         [checked]="isChecked(element.field, element.fieldObject, option)==true"
+                         [formControl]="formGroup.controls[element.field]"
+                         (change)="onChangeValue(element, $event, option.code)" />
+                  {{ option.label | translate }}
+                </label>
+              </div>
+              <span [hidden]="!formErrors[element.field]">
+                <label>{{formErrors[element.field]}}</label>
+              </span>
+            </div>
+            <div *ngIf="element.type === 'radio' && !element.hide"
+                 [hidden]="isHidden(element)"
+                 class="{{element.blockClass}}">
+              <div *ngFor="let option of element.options"
+                   class="col-md-4">
+                <label class="{{element.labelClass}}">
+                  <input type="radio"
+                         name="{{element.field}}"
+                         class="{{element.class}}"
+                         [formControl]="formGroup.controls[element.field]"
+                         (change)="onChangeValue(element, $event, option.code)"
+                         value="{{option.code}}"> <span>{{ option.label | translate }}</span>
+                </label>
+              </div>
+              <span [hidden]="!formErrors[element.field]">
+                <label>{{formErrors[element.field]}}</label>
+              </span>
+            </div>
+            <div *ngIf="element.type === 'cards' && !element.hide"
+                 [hidden]="isHidden(element)">
+              <period-details [cardsList]="element.cardsList"
+                              [collection]="collection"
+                              [displayMode]="displayMode"
+                              [(formGroup)]="formGroup"
+                              (changed)="refreshElements($event)"
+                              [collectionId]="collectionId"
+                              [database]="database"
+                              [controlRefresh]="controlRefresh"
+                              (action)="sendAction($event)">
+              </period-details>
+            </div>
+          </div>
+        </div>
+      </tabset>
+    </div>
+  </div>
+
+  <!-- [checked]="option.code === element.value" -->
+</ba-card>

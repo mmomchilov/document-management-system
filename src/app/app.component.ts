@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'document-management-system';
+  title = 'document-management-system right?';
   configs = [
     {
       "isOpenedHeader": true,

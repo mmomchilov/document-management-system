@@ -25,7 +25,8 @@ export class ContentContainerComponent implements OnInit, OnChanges {
   @Output() selectedFilterEvent = new EventEmitter();
 
   tabs: any;
-  private selectedFilter: string;
+  // private selectedFilter: string;
+  selectedFilter: string;
   contentList;
   formGroup = new FormGroup({});
   @Input() communicationService: ContainerCommunication;

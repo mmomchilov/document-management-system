@@ -1,0 +1,22 @@
+<div *ngIf="cardsList"
+     class="row">
+    <ba-card-details *ngFor="let card of cardsList"
+                     [subFormData]="recipientData"
+                     [ngClass]="card.isOpenedHeader ? 'col-' + card.columnSize + ' ' + card.minHeight : 'col-' + card.columnSize"
+                     [card]="card.elements"
+                     [collection]="collection"
+                     [collectionId]="collectionId"
+                     [database]="database"
+                     [type]="card.type"
+                     [title]="card.title"
+                     [(isOpenedHeader)]="card.isOpenedHeader"
+                     [enableDisplay]="card.enableDisplay"
+                     [displayMode]="displayMode"
+                     [(formGroup)]="formGroup"
+                     (updatedElement)="refreshElements($event)"
+                     (action)="sendAction($event)"
+                     (onFocusOut)="focusOut($event)"
+                     (selectedElement)="selectedElement($event)"
+                     [controlRefresh]="controlRefresh">
+    </ba-card-details>
+</div>

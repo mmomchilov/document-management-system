@@ -1,0 +1,40 @@
+<div>
+  <div *ngIf="!isViewMode()" class="row">
+    <div class="col-md-8"></div>
+    <div class="col-md-4">
+      <div class="pull-right">
+        <div *ngIf="!selectedItem;then btnAdd else btnSave"></div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #btnAdd><button class="btn btn-success" [disabled]="!formGroup.valid " (click)="addItem()">{{'localizationResource.common.add.shortLabel'
+      | translate}}</button></ng-template>
+  <ng-template #btnSave><button class="btn btn-success confirm-btn" [disabled]="!formGroup.valid" (click)="addItem()">{{'localizationResource.common.save.shortLabel'
+      | translate}}</button></ng-template>
+  <div>
+    <br>
+    <div *ngIf="!isViewMode() && selectedItem">
+      <ba-collection-details [cardsList]="cardsList" [(collection)]="selectedItem" [displayMode]="displayMode"
+        [(formGroup)]="formGroup" (changed)="refreshElements($event)" [collectionId]="collectionId" [database]="database"
+        [controlRefresh]="controlRefresh">
+      </ba-collection-details>
+    </div>
+
+    <div>
+      <add-remove-list [database]="database" [collectionId]="collectionId" [elements]="getElements()" [items]="items"
+        (selectItem)="selectItem($event)" [item]="choosenItem"></add-remove-list>
+    </div>
+    <br>
+  </div>
+
+  <div *ngIf="!isViewMode()" class="row">
+    <div class="col-md-8"></div>
+    <div class="col-md-4">
+      <div class="pull-right">
+        <button class="btn btn-success" [disabled]="noneSelected()" (click)="removeItem()">{{'localizationResource.common.remove.shortLabel'
+          | translate}}</button>
+      </div>
+    </div>
+  </div>
+</div>

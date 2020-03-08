@@ -1,4 +1,4 @@
-import { JsonPath } from 'app/theme/services/jsonPath';
+import { JsonPath } from './../../services/jsonPath';
 import { Injectable } from '@angular/core';
 
 @Injectable()

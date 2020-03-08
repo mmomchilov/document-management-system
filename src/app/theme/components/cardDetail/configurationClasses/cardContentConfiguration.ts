@@ -1,4 +1,4 @@
-import { TreeExplorerConfiguration } from '../../tree/treeExplorer/treeExplorerConfiguration';
+// import { TreeExplorerConfiguration } from '../../tree/treeExplorer/treeExplorerConfiguration';
 import { WidgetConfiguration } from './widgetConfiguration';
 import { TabConfiguration } from './tabConfigurationts';
 
@@ -13,5 +13,5 @@ export class CardContentConfiguration {
     tabs?: TabConfiguration[];
 
     fields?: WidgetConfiguration[][];
-    tree?: TreeExplorerConfiguration;
+    // tree?: TreeExplorerConfiguration;
 }
