@@ -69,8 +69,10 @@ export class ContentContainerComponent implements OnInit, OnChanges {
 
   private initTabs() {
     if (this.config) {
+      console.log('this.config.tabs !!!!!!!!', this.config.tabs );
       this.tabs = this.config.tabs ? this.config.tabs : undefined;
       this.selectedFilter = this.config.selectedTab;
+      console.log('this.this.tabs !!!!!!!!!!!!!?????????????', this.tabs );
     }
   }
 

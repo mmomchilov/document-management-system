@@ -205,7 +205,7 @@ export class AppComponent extends ValidationComponent implements OnInit // , DoC
               "filter": "riskDashboards",
               "columnSize": 12,
               "settings": {
-                "tableTitle": "Processed data in number and amount  - accounting year 2020  and the previous accounting year",
+                "tableTitle": "Third tab's Table!!!!!!!",
                 "hideSubHeader": true,
                 "columns": {
                   "riskFamily": {
