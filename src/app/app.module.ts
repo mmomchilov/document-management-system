@@ -10,8 +10,25 @@ import { TranslateCustomLoader } from './theme/components';
 import { CustomMissingTranslationHandler } from './theme/components/';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Routes, RouterModule } from '@angular/router';
+import { MonitoringIndicatorsComponent } from './pages/monitoringIndicators/monitoringIndicators.component';
+
+const appRoutes: Routes = [
+  { path: 'mainPage', component: MonitoringIndicatorsComponent },
+  //  { path: 'secondPage', component: SecondPageComponent },
+
+  {
+    path: '',
+    redirectTo: '/mainPage',
+    pathMatch: 'full'
+  },
+  { path: '**', component: MonitoringIndicatorsComponent }
+];
+
+
 @NgModule({
   declarations: [
+    MonitoringIndicatorsComponent,
     AppComponent
   ],
   imports: [
@@ -19,6 +36,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     NgaModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
+    RouterModule.forRoot(
+      appRoutes
+      //  ,{ enableTracing: true } // <-- debugging purposes only
+    ),
     TranslateModule,
     TranslateModule.forRoot({
       loader: { provide: TranslateLoader, useClass: TranslateCustomLoader },

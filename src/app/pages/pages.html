@@ -1,0 +1,9 @@
+<ba-sidebar></ba-sidebar>
+<ba-page-top [items]="items" [keyword]="keyword" [selectedItem]="selectedItem" (onSelectEvent)="select($event)" (onSearchEvent)="searchAll($event); showSearchResultModal($event)"></ba-page-top>
+<!-- <ba-page-header [items]="items" [keyword]="keyword" [selectedItem]="selectedItem" (onSelectEvent)="select($event)" (onSearchEvent)="searchAll($event); showSearchResultModal($event)"></ba-page-header> -->
+<div class="al-main">
+  <!-- <div class="al-content"> -->
+  <!-- <ba-content-top></ba-content-top> -->
+  <router-outlet></router-outlet>
+  <!-- </div> -->
+</div>

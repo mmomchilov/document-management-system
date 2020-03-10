@@ -53,6 +53,7 @@ export class ContentContainerComponent implements OnInit, OnChanges {
   }
 
   updateTableItems() {
+    console.log('this.contentList', this.contentList);
     this.contentList.forEach(row => {
       row.forEach(element => {
         if (element.type === 'editableTable' || element.type === 'table') {

@@ -1,0 +1,20 @@
+<!-- <sub-header 
+    [withEntityOnly]="true"   
+    [juridicals]="riskCarrierOptions"
+    [withYear]="true" 
+    [buttons]="buttons" 
+    [title]="title" 
+    (goback)="goBack()">
+</sub-header> -->
+ <!--               <pre>configs:  {{settings|json}}</pre> -->
+
+ configs:  {{configs|json}}
+<gen-card-container
+    [displayMode]="'r'" 
+    [configs]="configs" 
+    [parentForm]="formGroup" 
+    [database]="database"
+    [collectionId]="collectionId" 
+    [collection]="'juridicalEntity'"
+    (tabsChange)=tabsChange($event)>
+</gen-card-container>
