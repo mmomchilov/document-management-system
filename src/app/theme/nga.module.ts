@@ -77,8 +77,6 @@ import {
   //   DynamicCardManageComponent,
   //   DynamicCardManageCard,
   //   DynamicCardManageCard2,
-  //   BaCollectionDetails,
-  //   BaCardDetails,
   //   ManageElementList,
   //   ManageElementListCardDetails,
   //   RejectionByTypology,
@@ -91,7 +89,7 @@ import {
   //   // Generic components
   //   ExpandCollapseComponent,
   //   PanelViewComponent,
-  //   EntityViewTableComponent,
+  EntityViewTableComponent,
   ViewTableComponent,
   //   TreeViewComponent,
   //   TreeNodeComponent,
@@ -102,6 +100,8 @@ import {
   //   // SimpleInputsComponent,
   SimpleInputComponent,
   ContentContainerComponent,
+  BaCollectionDetails,
+  BaCardDetails,
 } from './components';
 
 // import { CardContainerComponent } from './../theme/components/cardContainer';
@@ -114,11 +114,11 @@ import { BaCardBlur } from './components/baCard/baCardBlur.directive';
 // import { CustomCardBlur } from './components/customCard/customCardBlur.directive';
 // import { BaCardBlur2 } from './components/baCard2/baCardBlur2.directive';
 
-// import {
-//   BaScrollPosition,
-//   BaSlimScroll,
-//   BaThemeRun,
-// } from './directives';
+import {
+  BaScrollPosition,
+  BaSlimScroll,
+  BaThemeRun,
+} from './directives';
 
 import {
   BaAppPicturePipe,
@@ -207,8 +207,8 @@ const NGA_COMPONENTS = [
   // DynamicCardManageCard2,
   // DynamicCardCustomComponent,
 
-  // BaCollectionDetails,
-  // BaCardDetails,
+  BaCollectionDetails,
+  BaCardDetails,
   // ManageElementList,
   // ManageElementListCardDetails,
 
@@ -218,7 +218,7 @@ const NGA_COMPONENTS = [
   // // Generic components
   // ExpandCollapseComponent,
   // PanelViewComponent,
-  // EntityViewTableComponent,
+  EntityViewTableComponent,
   // TreeViewComponent,
   // TreeNodeComponent,
   // TreeExplorerComponent,
@@ -231,9 +231,9 @@ const NGA_COMPONENTS = [
 ];
 
 const NGA_DIRECTIVES = [
-  // BaScrollPosition,
-  // BaSlimScroll,
-  // BaThemeRun,
+  BaScrollPosition,
+  BaSlimScroll,
+  BaThemeRun,
   BaCardBlur,
   // BaCardBlur2,
   // CustomCardBlur

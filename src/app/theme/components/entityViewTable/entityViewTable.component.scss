@@ -1,0 +1,14 @@
+.hiddenColumn {
+  display: none;
+}
+
+:host::ng-deep tr.process-waiting {
+  border: 2px solid orange;
+}
+
+:host::ng-deep {
+  th:last-of-type,
+  td:last-of-type {
+    display: none;
+  }
+}

@@ -1,0 +1,50 @@
+<!--HEADER-->
+<div *ngIf="hasPageHeader"
+     class="page-header">
+    <!-- BUTTON -->
+    <div class="col-xlg-4 col-xl-4 col-lg-4 col-12">
+        <a class="header-logo">
+            <div *ngIf="!buttonHide">
+                <button (click)="clickButton()"
+                        class="btn btn-success">
+                    <span class="fa fa-plus-circle"></span>
+                    {{ buttonLabel | translate }}</button>
+            </div>
+        </a>
+    </div>
+    <!-- SEARCH BAR -->
+    <div *ngIf="hasSearchBar"
+         class="form-inline header-filter valign pull-right">
+        <form #formContract="ngForm"
+              ngmodel="contract"
+              (submit)="loadEntities()">
+            <div class="col-12">
+                <div class="m-auto input-group ">
+                    <input type="text"
+                           [(ngModel)]="keyWord"
+                           class="form-control noFloat"
+                           name="label"
+                           [placeholder]=" 'localizationResource.common.search.shortLabel' | translate">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary noFloat">
+                            <span class="fa fa-search"
+                                  aria-hidden="true"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- TABLE -->
+<gen-view-table [id]="id"
+                [database]="database"
+                [collectionId]="collectionId"
+                [keyWord]="keyWordComplete"
+                [columnsListTofilter]="columnsListTofilter"
+                [limitPerPage]="limitPerPage"
+                [settings]="settings"
+                [hasMonitoring]="true"
+                (userRowClick)="selectRow($event)">
+</gen-view-table>
