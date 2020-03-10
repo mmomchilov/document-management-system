@@ -22,6 +22,7 @@ export class BaCollectionDetails implements OnInit, DoCheck {
   get formGroup() {
     return this.formGroupValue;
   }
+  @Input() recipientData: any;
 
   formGroupValue: FormGroup;
 
