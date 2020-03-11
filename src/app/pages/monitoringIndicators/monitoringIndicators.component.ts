@@ -190,7 +190,7 @@ export class MonitoringIndicatorsComponent extends ValidationComponent implement
       'unitTime': 'month',
       'actions': ['All']
     };
-    console.log('filters', filters);
+    // console.log('filters', filters);
     // this.partnerInfoService.loadCollections(filters, `/partner/keys/${buId}`)
     //   .subscribe(
     //     response => {
@@ -288,7 +288,7 @@ export class MonitoringIndicatorsComponent extends ValidationComponent implement
 
     this.configs =
       [MonitoringIndicatorsConfig.generateCard(results, {}, this.selectedTab, this.translate)];
-    console.log('this.configs', this.configs);
+    // console.log('this.configs', this.configs);
 
   }
 

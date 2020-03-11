@@ -16,6 +16,8 @@ import { TabConfiguration } from 'src/app/theme/components/cardDetail/configurat
 export class MonitoringIndicatorsConfig {
 
   static generateCard(result, optionalParams, selectedTab, translate): any {
+    const me = UtilCharts.translatedTitleLabels['healthTable1'];
+    console.log('me', me);
 
     return {
       title: undefined, // remove card header
@@ -30,12 +32,12 @@ export class MonitoringIndicatorsConfig {
         fields: [
           [
 
-
             {
               type: 'editableTable',
-              filter: 'healthDashboards',
+              filter: 'structureSelector',
               columnSize: 12,
-              settings: {tableTitle: " healthDashboards table title "
+              settings: {
+                tableTitle: 'Seccond tab table title '
                 // tableTitle: `${UtilCharts.translatedTitleLabels
                 // ['healthTable1'][0]} ${UtilCharts.translatedTitleLabels
                 // ['healthTable1'][1]} ${result.currentYearOption} ${
@@ -55,9 +57,10 @@ export class MonitoringIndicatorsConfig {
 
             {
               type: 'editableTable',
-              filter: 'riskDashboards',
+              filter: 'trashSelector',
               columnSize: 12,
-              settings: { tableTitle: 'jjjjjjjjjjjjjjj'
+              settings: {
+                tableTitle: 'THIRD tab Table title'
                 // tableTitle: `${UtilCharts.translatedTitleLabels
                 // ['riskAndProtectTable1'][0]} ${UtilCharts.translatedTitleLabels
                 // ['riskAndProtectTable1'][1]} ${result.currentYearOption} ${
@@ -80,22 +83,34 @@ export class MonitoringIndicatorsConfig {
     console.log(UtilCharts.translatedTitleLabels);
     return [
       {
-        field: 'financialFlowsTab',
-        filterName: 'financialFlows',
+        field: 'documentsTab',
+        filterName: 'documentsSelector',
         // label: `${UtilCharts.translatedTitleLabels['financialFlowsTab'][0]} ${result.currentYearOption}`
-        label: ` ${result.currentYearOption}`
+        label: `Documents`
         // 'localizationResource.referential.financialFlows.shortLabel'
       },
       {
-        field: 'healthDashboardsTab',
-        filterName: 'healthDashboards',
-        label: 'nesto si ' // `${UtilCharts.translatedTitleLabels['healthDashboardsTab'][0]}`
+        field: 'structureTab',
+        filterName: 'structureSelector',
+        label: 'Structure ' // `${UtilCharts.translatedTitleLabels['healthDashboardsTab'][0]}`
         // 'localizationResource.referential.healthDashboards.shortLabel'
       },
       {
-        field: 'riskDashboardsTab',
-        filterName: 'riskDashboards',
-        label: 'nesto si 33333' // `${UtilCharts.translatedTitleLabels['riskDashboardsTab'][0]}`
+        field: 'trashTab',
+        filterName: 'trashSelector',
+        label: 'Trash' // `${UtilCharts.translatedTitleLabels['riskDashboardsTab'][0]}`
+        // 'localizationResource.referential.riskDashboards.shortLabel'
+      },
+      {
+        field: 'listsTab',
+        filterName: 'listsSelector',
+        label: 'Lists' // `${UtilCharts.translatedTitleLabels['riskDashboardsTab'][0]}`
+        // 'localizationResource.referential.riskDashboards.shortLabel'
+      },
+      {
+        field: 'settingsTab',
+        filterName: 'settingsSelector',
+        label: 'Settings' // `${UtilCharts.translatedTitleLabels['riskDashboardsTab'][0]}`
         // 'localizationResource.referential.riskDashboards.shortLabel'
       }
     ];

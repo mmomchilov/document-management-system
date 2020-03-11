@@ -37,6 +37,8 @@
           </gen-content-container>
         </div>
       </div>
+
+      content:  {{content|json}}-->
        <gen-simple-inputs *ngIf="content && content.type === 'simpleInputs'"
                          class="col-12"
                          [parentId]="parentId"

@@ -123,9 +123,9 @@ export class UtilCharts {
         //         this.translatedTitleLabels[el] = this.titleLabels[el]
         //             .map(translationCode => translateService.instant(translationCode));
         //     });
-        console.log('this.titleLabels', this.titleLabels);
+        // console.log('this.titleLabels', this.titleLabels);
         this.translatedTitleLabels = this.titleLabels;
-        console.log(UtilCharts.translatedTitleLabels);
+        // console.log(UtilCharts.translatedTitleLabels);
     }
 
     static translateLegendList(translateService) {

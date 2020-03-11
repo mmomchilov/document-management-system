@@ -70,21 +70,21 @@ export class ContentContainerComponent implements OnInit, OnChanges {
 
   private initTabs() {
     if (this.config) {
-      console.log('this.config.tabs !!!!!!!!', this.config.tabs );
+      // console.log('this.config.tabs !!!!!!!!', this.config.tabs );
       this.tabs = this.config.tabs ? this.config.tabs : undefined;
       this.selectedFilter = this.config.selectedTab;
-      console.log('this.this.tabs !!!!!!!!!!!!!?????????????', this.tabs );
+      // console.log('this.this.tabs !!!!!!!!!!!!!?????????????', this.tabs );
     }
   }
 
   // Smart Table
   getTableSettings(config) {
-   // console.log('config config', config);
+    // console.log('config config', config);
     // console.log('config log', config);
     if (typeof config.settings === 'function') {
       config.settings = config.settings(this.collection);
     }
-    console.log('config.settings', config.settings);
+    // console.log('config.settings', config.settings);
     return config.settings;
   }
   private applyDefaultTableItems(config: any): void {

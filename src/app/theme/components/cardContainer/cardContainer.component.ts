@@ -49,8 +49,8 @@ export class CardContainerComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     if (changes.configs && this.parentForm) {
       this.cards = new FormArray([]);
-      console.log('this.id', this.id);
-      console.log('this.parentForm', this.parentForm);
+      // console.log('this.id', this.id);
+      //  console.log('this.parentForm', this.parentForm);
       this.parentForm.removeControl(this.id);
       this.parentForm.addControl(this.id, this.cards);
     }

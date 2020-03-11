@@ -5,14 +5,14 @@ export class HealthTable1 {
     static chart(translateService): any {
         return {
             medicalreimbursementDateFamlyLabel: {
-                title: 'localizationResource.referential.dashboard.actFamily.shortLabel',
+                title: translateService.instant('localizationResource.referential.dashboard.actFamily.shortLabel'),
                 width: '10%',
                 type: 'html',
                 valuePrepareFunction: (value) => {
                     return `<div class="left">${value}</div>`;
                 }
             },
-            numberOfActsPY : {
+            numberOfActsPY: {
                 title: this.addYear(UtilCharts.translatedHealthTable1Columns[1], '-1'),
                 width: '4%',
                 type: 'html',
