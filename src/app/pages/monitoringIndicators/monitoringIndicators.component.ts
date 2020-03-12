@@ -21,6 +21,7 @@ import { UtilCharts } from './cardsConfig/utilCharts';
 export class MonitoringIndicatorsComponent extends ValidationComponent implements OnInit, DoCheck, OnDestroy {
   database = 'agreement';
   collectionId = 'juridical-entity';
+  collection = {};
   juridicalEntity: any;
   private juridicalCache: any = [];
   title: any = '';

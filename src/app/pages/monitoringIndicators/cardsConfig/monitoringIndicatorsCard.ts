@@ -30,63 +30,117 @@ export class MonitoringIndicatorsConfig {
         tabs: this.getTabsList(result),
         // fields in tabs
         fields: [
-          [{
-            filter: 'structureSelector',
-            field: 'categoryCode',
-            labelCode: 'agreementAppendiceLst.categoryCode',
-            type: 'select',
-            enum: 'insrncecatgry',
-            onChangeValue: {
-              field: 'branchCode'
-            },
-            disabledDisplayModes: 'u',
-            validators: {
-              isRequired: true
-            },
-            columnSize: 4
-          },
+          [
+            // {
+            //   type: 'user',
+            //   label: '',
+            //   columnSize: 6,
+            //   filter: 'financialFlows',
+            //   title: 'user btn'
+            // },
 
-          {
-            type: 'editableTable',
-            filter: 'structureSelector',
-            columnSize: 12,
-            settings: {
-              tableTitle: 'Seccond tab table title '
-              // tableTitle: `${UtilCharts.translatedTitleLabels
-              // ['healthTable1'][0]} ${UtilCharts.translatedTitleLabels
-              // ['healthTable1'][1]} ${result.currentYearOption} ${
-              //   UtilCharts.translatedTitleLabels
-              //   ['healthTable1'][2]
-              //   }`
-              ,
-              // 'localizationResource.referential.dashboard.processedData.shortLabel',
-              hideSubHeader: true,
-              columns: HealthTable1.chart(translate),
-              rowClassFunction: (row) => {
-                return this.getBoundariesColorClass(row, optionalParams);
-              }
-            },
-            items: result.healthitems
-          },
 
-          {
-            type: 'editableTable',
-            filter: 'trashSelector',
-            columnSize: 12,
-            settings: {
-              tableTitle: 'THIRD tab Table title'
-              // tableTitle: `${UtilCharts.translatedTitleLabels
-              // ['riskAndProtectTable1'][0]} ${UtilCharts.translatedTitleLabels
-              // ['riskAndProtectTable1'][1]} ${result.currentYearOption} ${
-              //   UtilCharts.translatedTitleLabels
-              //   ['riskAndProtectTable1'][2]
-              //   }`
-              ,
-              hideSubHeader: true,
-              columns: RiskAndProtectTable1.chart(translate)
+            {
+              // filter: 'structureSelector',
+              field: 'categoryCode',
+              labelCode: 'agreementAppendiceLst.categoryCode',
+              type: 'select',
+              enum: 'insrncecatgry',
+              defaultValue: '',
+              // onChangeValue: {
+              //   field: 'branchCode'
+              // },
+              // disabledDisplayModes: 'u',
+              validators: {
+                isRequired: true
+              },
+              columnSize: 4
             },
-            items: result.RiskAndProtectTable1
-          }
+            {
+              // filter: 'structureSelector',
+              defaultValue: '',
+              field: 'birthName',
+              type: 'input',
+              columnSize: '3',
+              label: 'localizationProperty.agreement.juridical-entity.code.shortLabel'
+            },
+
+            {
+              // filter: 'structureSelector',
+              field: 'startDate',
+              labelCode: 'agreementAppendiceLst.startDate',
+              type: 'date',
+              columnSize: '12',
+              enableDisplay: 'rcuvw',
+              isRequired: true,
+              required: 'c'.match(/^(c|u|v|w)$/) ? true : false
+            },
+            {
+              type: 'user',
+              label: 'user',
+              columnSize: '2',
+              enableDisplay: 'n',
+              title: 'this.showUserDetails',
+              isNotVisible: true
+            },
+            // {
+            //   filter: 'structureSelector',
+            //   field: 'delegateActivitiesLst.activityCode',
+            //   hideLabel: true,
+            //   fieldObject: 'activityCode', // a revoir
+            //   listObject: 'delegateActivitiesLst',
+            //   label: 'agreementAppendiceLst.delegateActivitiesLst.activityCode',
+            //   type: 'checkbox',
+            //   // optionsType: 'enum',
+            //   // optionsName: 'delegateactvtycode',
+            //   // enum: 'delegateactvtycode',
+            //   columnSize: '6',
+            //   enableDisplay: 'cuvw',
+            //   // required: display.match(/^(c|u|v|w)$/) ? true : false
+            // },
+
+
+            {
+              filter: 'structureSelector',
+              type: 'editableTable',
+              columnSize: 12,
+              settings: {
+                tableTitle: 'Seccond tab table title '
+                // tableTitle: `${UtilCharts.translatedTitleLabels
+                // ['healthTable1'][0]} ${UtilCharts.translatedTitleLabels
+                // ['healthTable1'][1]} ${result.currentYearOption} ${
+                //   UtilCharts.translatedTitleLabels
+                //   ['healthTable1'][2]
+                //   }`
+                ,
+                // 'localizationResource.referential.dashboard.processedData.shortLabel',
+                hideSubHeader: true,
+                columns: HealthTable1.chart(translate),
+                rowClassFunction: (row) => {
+                  return this.getBoundariesColorClass(row, optionalParams);
+                }
+              },
+              items: result.healthitems
+            },
+
+            {
+              type: 'editableTable',
+              filter: 'trashSelector',
+              columnSize: 12,
+              settings: {
+                tableTitle: 'THIRD tab Table title'
+                // tableTitle: `${UtilCharts.translatedTitleLabels
+                // ['riskAndProtectTable1'][0]} ${UtilCharts.translatedTitleLabels
+                // ['riskAndProtectTable1'][1]} ${result.currentYearOption} ${
+                //   UtilCharts.translatedTitleLabels
+                //   ['riskAndProtectTable1'][2]
+                //   }`
+                ,
+                hideSubHeader: true,
+                columns: RiskAndProtectTable1.chart(translate)
+              },
+              items: result.RiskAndProtectTable1
+            }
           ]
         ]
       }

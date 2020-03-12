@@ -24,6 +24,9 @@ export class CollectionService {
     }
 
     getFieldVal(field: string, line: any, collection): any {
+
+        console.log('collection', collection);
+        console.log('line', line);
         let path = '';
         if (line.path) {
             path = line.path;
@@ -31,6 +34,7 @@ export class CollectionService {
         if (line.fieldCode) {
             field = line.fieldCode;
         }
+
         let fieldVal = this.jsonPath.get().query(collection, `$.${path}${field}`)[0];
         if (fieldVal === undefined && path === '') {
             fieldVal = collection[field];
@@ -38,6 +42,7 @@ export class CollectionService {
         if (!fieldVal && line.defaultValue) {
             fieldVal = line.defaultValue;
         }
+        console.log('fieldVal', fieldVal);
 
         // if (line.type === 'date') {
         //   if (!this.isViewMode()) {
@@ -62,7 +67,7 @@ export class CollectionService {
         if (!config.items) {
             items = this.getFieldVal(field, config, collection);
             if (!items) {
-               return this.initializeItems(field, config, collection);
+                return this.initializeItems(field, config, collection);
             }
         }
         return items;
