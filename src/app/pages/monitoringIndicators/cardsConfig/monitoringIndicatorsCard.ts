@@ -30,74 +30,17 @@ export class MonitoringIndicatorsConfig {
         tabs: this.getTabsList(result),
         // fields in tabs
         fields: [
+
           [
-            // {
-            //   type: 'user',
-            //   label: '',
-            //   columnSize: 6,
-            //   filter: 'financialFlows',
-            //   title: 'user btn'
-            // },
-
-
             {
-              // filter: 'structureSelector',
-              field: 'categoryCode',
-              labelCode: 'agreementAppendiceLst.categoryCode',
-              type: 'select',
-              enum: 'insrncecatgry',
-              defaultValue: '',
-              // onChangeValue: {
-              //   field: 'branchCode'
-              // },
-              // disabledDisplayModes: 'u',
-              validators: {
-                isRequired: true
-              },
-              columnSize: 4
+              filter: 'trashSelector',
+              type: 'checkbox',
+              field: 'functionList',
+              hideLabel: true,
+              enum: 'changeEnum', // not implemented really
+              splitSize: 12,
+              columnSize: 12
             },
-            {
-              // filter: 'structureSelector',
-              defaultValue: '',
-              field: 'birthName',
-              type: 'input',
-              columnSize: '3',
-              label: 'localizationProperty.agreement.juridical-entity.code.shortLabel'
-            },
-
-            {
-              // filter: 'structureSelector',
-              field: 'startDate',
-              labelCode: 'agreementAppendiceLst.startDate',
-              type: 'date',
-              columnSize: '12',
-              enableDisplay: 'rcuvw',
-              isRequired: true,
-              required: 'c'.match(/^(c|u|v|w)$/) ? true : false
-            },
-            {
-              type: 'user',
-              label: 'user',
-              columnSize: '2',
-              enableDisplay: 'n',
-              title: 'this.showUserDetails',
-              isNotVisible: true
-            },
-            // {
-            //   filter: 'structureSelector',
-            //   field: 'delegateActivitiesLst.activityCode',
-            //   hideLabel: true,
-            //   fieldObject: 'activityCode', // a revoir
-            //   listObject: 'delegateActivitiesLst',
-            //   label: 'agreementAppendiceLst.delegateActivitiesLst.activityCode',
-            //   type: 'checkbox',
-            //   // optionsType: 'enum',
-            //   // optionsName: 'delegateactvtycode',
-            //   // enum: 'delegateactvtycode',
-            //   columnSize: '6',
-            //   enableDisplay: 'cuvw',
-            //   // required: display.match(/^(c|u|v|w)$/) ? true : false
-            // },
 
 
             {
