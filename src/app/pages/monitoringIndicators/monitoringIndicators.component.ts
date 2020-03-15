@@ -19,7 +19,7 @@ import { UtilCharts } from './cardsConfig/utilCharts';
   styleUrls: ['./monitoringIndicators.component.scss']
 })
 export class MonitoringIndicatorsComponent extends ValidationComponent implements OnInit, DoCheck, OnDestroy {
-  database = 'agreement';
+  database = 'database'; // agreement
   collectionId = 'juridical-entity';
   collection = {};
   juridicalEntity: any;
@@ -100,7 +100,8 @@ export class MonitoringIndicatorsComponent extends ValidationComponent implement
     UtilCharts.translateHealthTable1Columns(this.translate);
     UtilCharts.translateRPTable1Columns(this.translate);
     this.setFormGroup(this.fb.group({}));
-    //   this.riskCarrierOptions = this.routing.data.riskCarrierOptions;
+    console.log('formGroup formGroup formGroup', this.formGroup);
+    // this.riskCarrierOptions = this.routing.data.riskCarrierOptions;
     this.setCardsConfig();
     // } else { this.router.navigate(['pages/partner']); }
   }
@@ -183,14 +184,14 @@ export class MonitoringIndicatorsComponent extends ValidationComponent implement
       toDate = `${this.currentYearOption}-${UtilCharts.strThisMonth}-${UtilCharts.strThisDay}T00:00:00Z`;
     } else { toDate = `${this.currentYearOption}-12-31T00:00:00Z`; }
 
-    const filters = {
-      'riskCarrier': this.currentRiskBearerId,
-      'from': fromDate,
-      'to': toDate,
-      'year': this.currentYearOption,
-      'unitTime': 'month',
-      'actions': ['All']
-    };
+    // const filters = {
+    //   'riskCarrier': this.currentRiskBearerId,
+    //   'from': fromDate,
+    //   'to': toDate,
+    //   'year': this.currentYearOption,
+    //   'unitTime': 'month',
+    //   'actions': ['All']
+    // };
     // console.log('filters', filters);
     // this.partnerInfoService.loadCollections(filters, `/partner/keys/${buId}`)
     //   .subscribe(

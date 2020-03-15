@@ -23,7 +23,8 @@ export class MonitoringIndicatorsConfig {
       title: undefined, // remove card header
       isOpenedHeader: true,
       columnSize: 12,
-      content: {
+      content:
+      {
         type: 'simpleInputs',
         // tabs
         selectedTab,
@@ -35,7 +36,7 @@ export class MonitoringIndicatorsConfig {
             {
               filter: 'trashSelector',
               type: 'checkbox',
-              field: 'functionList',
+              field: 'changeEnum',
               hideLabel: true,
               enum: 'changeEnum', // not implemented really
               splitSize: 12,
