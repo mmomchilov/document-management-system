@@ -7,7 +7,7 @@ import { NgaModule } from '../theme/nga.module';
 import {
   // RoutingService,
   // SearchService,
-  // CollectionDetailsService,
+  CollectionDetailsService,
   // NotificationService,
   // MonitoringService,
   // //dashboard
@@ -84,7 +84,7 @@ import { DetailsModal } from './search/modals/details/details.modal.component';
     // RoutingService,
     // SearchService,
     SearchComponent,
-    // CollectionDetailsService,
+    CollectionDetailsService,
     // NotificationService,
     // MonitoringService,
     // //dashboard

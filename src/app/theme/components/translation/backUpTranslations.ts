@@ -17,9 +17,9 @@ export class BackUpTranslations {
     };
 
     static translate(code: string, interpolateParams) {
-        console.log('translations', this.translations);
-        console.log('code', code);
-        console.log('interpolateParams', interpolateParams);
+        // console.log('translations', this.translations);
+        // console.log('code', code);
+        // console.log('interpolateParams', interpolateParams);
         let valueFromDemoTranslations = this.translations[code];
         if (valueFromDemoTranslations) {
             if (interpolateParams) {
@@ -32,7 +32,7 @@ export class BackUpTranslations {
             return valueFromDemoTranslations;
         }
         if (code.substring(0, 12) === 'localization') {
-            console.log('translations code ????????', code);
+            //  console.log('translations code ????????', code);
             const splitKey = code.split('.');
             return splitKey.length > 1 ? `${splitKey[splitKey.length - 2]} DFLT` : code;
         }
