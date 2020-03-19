@@ -45,7 +45,7 @@
                             [displayMode]="displayMode"
                             [confirmDelete]="content.confirmDelete"></add-remove-table>
         </div>
-
+         <!-- <pre>content:  {{content|json}}</pre> -->
         <div *ngSwitchCase="'editableTable'"
              [hidden]="!isVisible(content)"
              class="editableTable">

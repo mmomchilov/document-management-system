@@ -33,15 +33,29 @@ export class MonitoringIndicatorsConfig {
         fields: [
 
           [
+            
             {
               filter: 'trashSelector',
               type: 'checkbox',
               field: 'changeEnum',
-              hideLabel: true,
+              // hideLabel: true,
+              optionsName: 'changeEnum',
+              // enum: 'delegateactvtycode',
               enum: 'changeEnum', // not implemented really
               splitSize: 12,
               columnSize: 12
             },
+
+            // {
+            //   field: 'delegateActivitiesLst',
+            //   fieldCode: 'activityCode',
+            //   path: 'delegateActivitiesLst[*].',
+            //   labelCode: 'delegateActivitiesLst.activityCode',
+            //   hideLabel: true,
+            //   type: 'checkbox',
+            //   enum: 'delegateactvtycode',
+            //   disabledDisplayModes: 'r',
+            // },
 
 
             {

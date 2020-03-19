@@ -45,7 +45,7 @@ export class SimpleInputComponent extends ValidationComponent implements OnInit,
   }
 
   ngOnInit() {
-
+    // formGroup.controls[config.field]
     if (this.updates) {
       this.subscription = this.updates.updatesForId(this.getId())
         .subscribe(configUpdate => {
@@ -415,6 +415,8 @@ export class SimpleInputComponent extends ValidationComponent implements OnInit,
     );
     this.formGroup.setControl(field, newControl);
     this.formGroup.updateValueAndValidity();
+    console.log('formGroup config simple', this.formGroup.controls[this.config.field]);
+    
   }
 
   private applyDefaultLabel(field: string, line: any): void {
@@ -480,6 +482,7 @@ export class SimpleInputComponent extends ValidationComponent implements OnInit,
   }
 
   isDisplayDisabled(config: any): boolean {
+    console.log('this.collection simple', this.collection);
     if (this.isViewMode()) {
       return true;
     }

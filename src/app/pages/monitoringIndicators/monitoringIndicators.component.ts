@@ -20,7 +20,7 @@ import { UtilCharts } from './cardsConfig/utilCharts';
 })
 export class MonitoringIndicatorsComponent extends ValidationComponent implements OnInit, DoCheck, OnDestroy {
   database = 'database'; // agreement
-  collectionId = 'juridical-entity';
+  collectionId = 'cards'; // 
   collection = {};
   juridicalEntity: any;
   private juridicalCache: any = [];
@@ -37,7 +37,7 @@ export class MonitoringIndicatorsComponent extends ValidationComponent implement
   strThisMonth = (`0${this.thisMonth}`).slice(-2);
   thisDay = (new Date()).getDate();
   strThisDay = (`0${this.thisDay}`).slice(-2);
-  selectedTab = 'financialFlows';
+  selectedTab = 'documentsSelector';
   riskCarrierOptions: any = [];
   subscribed = {};
 
@@ -276,14 +276,14 @@ export class MonitoringIndicatorsComponent extends ValidationComponent implement
         srvcType: "Medical Fees",
         clmFldrNbr: 0,
         clmFldrNbr1: 6,
-        opndClmFldrNbr: 0,
-        sttlmntFldrNbr: 0,
+        opndClmFldrNbr: 12,
+        sttlmntFldrNbr: 44,
         sttlmntFldrNbr1: 6,
-        beneficiaryNbr: 0,
+        beneficiaryNbr: 22,
         beneficiaryNbr1: 6,
         paidAmount: 0,
         paidAmount1: 6823.389999999999,
-        avrgCost: 0,
+        avrgCost: 77,
         avrgDuration: 6
       }];
 
