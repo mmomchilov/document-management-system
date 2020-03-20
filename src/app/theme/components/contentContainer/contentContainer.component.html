@@ -14,11 +14,13 @@
   <div *ngFor="let rowLst of contentList"
        class="row">
     <div *ngFor="let content of rowLst"
-         [ngClass]="['centerList', getStyling()]">
+         [style.display]="isVisible(content) ? 'block' : 'none'"
+         [ngClass]="['centerList', getStyling(),
+         content.columnSize && isVisible(content) ? 'col-' + content.columnSize :'' ]">
       <div [ngSwitch]="getComponent(content.type)">
         <gen-simple-input *ngSwitchCase="'simpleInputs'"
-                          [ngClass]="['col-' + 6]"
-                          
+                          [ngClass]="['col-' + columnSize]"
+                          [hidden]="!isVisible(content)"
                           [parentId]="parentId"
                           [displayMode]="displayMode"
                           [database]="database"
@@ -28,13 +30,9 @@
                           [config]="content"
                           [formGroup]="formGroup"
                           [updates]="communicationService"
-                        
+                          (onShowDetails)="showDetails($event)"
                           (valueChanged)="emitContentEvent($event)">
         </gen-simple-input>
-
-          <!--
-            [hidden]="!isVisible(content)"
-            (onShowDetails)="showDetails($event)" -->
 
         <div *ngSwitchCase="'table'"
              [hidden]="!isVisible(content)">
@@ -45,7 +43,7 @@
                             [displayMode]="displayMode"
                             [confirmDelete]="content.confirmDelete"></add-remove-table>
         </div>
-         <!-- <pre>content:  {{content|json}}</pre> -->
+
         <div *ngSwitchCase="'editableTable'"
              [hidden]="!isVisible(content)"
              class="editableTable">
