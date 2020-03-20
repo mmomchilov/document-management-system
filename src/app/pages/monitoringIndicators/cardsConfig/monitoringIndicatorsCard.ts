@@ -31,20 +31,84 @@ export class MonitoringIndicatorsConfig {
         tabs: this.getTabsList(result),
         // fields in tabs
         fields: [
-
-          [
-            
+          [ {
+            filter: 'trashSelector',
+            field: 'subBusinessContext',
+            labelCode: 'businessContext',
+            type: 'select',
+            enum: 'changeEnum',
+            validators: {
+                isRequired: true
+            },
+            // storeData: ((collection, newValue) => {
+            //     const context = StorageConfig.getBusinessContext(newValue);
+            //     collection.businessContext = context.businessContext;
+            //     collection.subBusinessContext = context.subBusinessContext;
+            // }),
+            columnSize: 6
+        },
+        {filter: 'trashSelector',
+            field: 'code',
+            type: 'input',
+            disabledDisplayModes: 'u',
+            validators: {
+                isRequired: true
+            },
+          // onFocusOut: ExtractData.transformCode(),
+            columnSize: 6
+        }],
+        [
             {
               filter: 'trashSelector',
               type: 'checkbox',
               field: 'changeEnum',
-              // hideLabel: true,
+              hideLabel: true,
               optionsName: 'changeEnum',
               // enum: 'delegateactvtycode',
               enum: 'changeEnum', // not implemented really
               splitSize: 12,
               columnSize: 12
             },
+            {
+              field: 'exchangeStandard',
+             // path: ctgryFieldPath,
+            //  labelPath: ctgryLabelPath,
+              type: 'select',
+              enum: 'currency',
+           //   enumTransformation: this.sortEnumeration,
+              columnSize: 3,
+              filter: 'trashSelector'
+          },
+          {
+            field: 'exchangeStandard1',
+           // path: ctgryFieldPath,
+          //  labelPath: ctgryLabelPath,
+            type: 'select',
+            enum: 'currency',
+         //   enumTransformation: this.sortEnumeration,
+            columnSize: 3,
+            filter: 'trashSelector'
+        },
+        {
+          field: 'exchangeStandard2',
+         // path: ctgryFieldPath,
+        //  labelPath: ctgryLabelPath,
+          type: 'select',
+          enum: 'currency',
+       //   enumTransformation: this.sortEnumeration,
+          columnSize: 3,
+          filter: 'trashSelector'
+      },
+      {
+        field: 'exchangeStandard3',
+       // path: ctgryFieldPath,
+      //  labelPath: ctgryLabelPath,
+        type: 'select',
+        enum: 'currency',
+     //   enumTransformation: this.sortEnumeration,
+        columnSize: 3,
+        filter: 'trashSelector'
+    },
 
             // {
             //   field: 'delegateActivitiesLst',
