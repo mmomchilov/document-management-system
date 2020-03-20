@@ -31,139 +31,292 @@ export class MonitoringIndicatorsConfig {
         tabs: this.getTabsList(result),
         // fields in tabs
         fields: [
-          [ {
-            filter: 'trashSelector',
-            field: 'subBusinessContext',
-            labelCode: 'businessContext',
-            type: 'select',
-            enum: 'changeEnum',
-            validators: {
-                isRequired: true
-            },
-            // storeData: ((collection, newValue) => {
-            //     const context = StorageConfig.getBusinessContext(newValue);
-            //     collection.businessContext = context.businessContext;
-            //     collection.subBusinessContext = context.subBusinessContext;
-            // }),
-            columnSize: 6
-        },
-        {filter: 'trashSelector',
-            field: 'code',
-            type: 'input',
-            disabledDisplayModes: 'u',
-            validators: {
-                isRequired: true
-            },
-          // onFocusOut: ExtractData.transformCode(),
-            columnSize: 6
-        }],
-        [
+
+          [{
+            field: 'ediLst',
+            // path: `${this.category}.`,
+            type: 'comment',
+            columnSize: 12,
+            // disabledDisplayModes: 'cur',
+            filter: 'newFamilyMemberSelector'
+          }],
+
+
+
+          // [
+          // {
+          //   filter: 'newFamilyMemberSelector',
+          //   field: 'subBusinessContext',
+          //   labelCode: 'businessContext',
+          //   type: 'select',
+          //   enum: 'changeEnum',
+          //   validators: {
+          //     isRequired: false
+          //   },
+          //   // storeData: ((collection, newValue) => {
+          //   //     const context = StorageConfig.getBusinessContext(newValue);
+          //   //     collection.businessContext = context.businessContext;
+          //   //     collection.subBusinessContext = context.subBusinessContext;
+          //   // }),
+          //   columnSize: 6
+          // },
+          // {
+          //   filter: 'newFamilyMemberSelector',
+          //   field: 'code',
+          //   type: 'input',
+          //   disabledDisplayModes: 'r',
+          //   validators: {
+          //     isRequired: true
+          //   },
+          //   // onFocusOut: ExtractData.transformCode(),
+          //   columnSize: 4
+          // }],
+          [
             {
-              filter: 'trashSelector',
+              filter: 'newFamilyMemberSelector',
               type: 'checkbox',
               field: 'changeEnum',
-              hideLabel: true,
+              // hideLabel: true,
               optionsName: 'changeEnum',
               // enum: 'delegateactvtycode',
               enum: 'changeEnum', // not implemented really
               splitSize: 12,
               columnSize: 12
-            },
+            }],
+
+          [
             {
-              field: 'exchangeStandard',
-             // path: ctgryFieldPath,
-            //  labelPath: ctgryLabelPath,
+              filter: 'newFamilyMemberSelector',
+              field: 'class',
+              // path: ctgryFieldPath,
+              //  labelPath: ctgryLabelPath,
               type: 'select',
               enum: 'currency',
-           //   enumTransformation: this.sortEnumeration,
-              columnSize: 3,
-              filter: 'trashSelector'
+              //   enumTransformation: this.sortEnumeration,
+              columnSize: 1
+            }, {
+              filter: 'newFamilyMemberSelector',
+              field: 'year',
+              type: 'input',
+              disabledDisplayModes: 'r',
+              // validators: {
+              //   isRequired: true
+              // },
+              // onFocusOut: ExtractData.transformCode(),
+              columnSize: 1
+            },
+            {
+              filter: 'newFamilyMemberSelector',
+              field: 'counter',
+              // path: ctgryFieldPath,
+              //  labelPath: ctgryLabelPath,
+              type: 'select',
+              enum: 'currency',
+              //   enumTransformation: this.sortEnumeration,
+              columnSize: 1
+            },
+            {
+              filter: 'newFamilyMemberSelector',
+              field: 'xtra',
+              type: 'input',
+              // disabledDisplayModes: 'r',
+              // validators: {
+              //   isRequired: true
+              // },
+              // onFocusOut: ExtractData.transformCode(),
+              columnSize: 1
+            },
+            {
+              filter: 'newFamilyMemberSelector',
+              field: 'audience',
+              // path: ctgryFieldPath,
+              //  labelPath: ctgryLabelPath,
+              type: 'select',
+              enum: 'currency',
+              //   enumTransformation: this.sortEnumeration,
+              columnSize: 1
+            },
+            {
+              filter: 'newFamilyMemberSelector',
+              field: 'lang',
+              // path: ctgryFieldPath,
+              //  labelPath: ctgryLabelPath,
+              type: 'select',
+              enum: 'currency',
+              //   enumTransformation: this.sortEnumeration,
+              columnSize: 1
+            },
+            {
+              filter: 'newFamilyMemberSelector',
+              field: 'rev',
+              type: 'input',
+              // disabledDisplayModes: 'r',
+              // validators: {
+              //   isRequired: true
+              // },
+              // onFocusOut: ExtractData.transformCode(),
+              columnSize: 1
+            },
+            {
+              filter: 'newFamilyMemberSelector',
+              field: 'number',
+              type: 'input',
+              // hideLabel: true,
+              // disabledDisplayModes: 'r',
+              // validators: {
+              //   isRequired: true
+              // },
+              // onFocusOut: ExtractData.transformCode(),
+              columnSize: 2
+            }],
+          [{
+            filter: 'newFamilyMemberSelector',
+            field: 'title',
+            type: 'input',
+            // disabledDisplayModes: 'r',
+            // validators: {
+            //   isRequired: true
+            // },
+            // onFocusOut: ExtractData.transformCode(),
+            columnSize: 7
           },
           {
-            field: 'exchangeStandard1',
-           // path: ctgryFieldPath,
-          //  labelPath: ctgryLabelPath,
+            filter: 'newFamilyMemberSelector',
+            field: 'access',
+            type: 'input',
+            // hideLabel: true,
+            // disabledDisplayModes: 'r',
+            // validators: {
+            //   isRequired: true
+            // },
+            // onFocusOut: ExtractData.transformCode(),
+            columnSize: 2
+          }],
+          [{
+            filter: 'newFamilyMemberSelector',
+            field: 'date',
+            type: 'input',
+            // disabledDisplayModes: 'r',
+            // validators: {
+            //   isRequired: true
+            // },
+            // onFocusOut: ExtractData.transformCode(),
+            columnSize: 2
+          },
+          {
+            filter: 'newFamilyMemberSelector',
+            field: 'docStatus',
+            // path: ctgryFieldPath,
+            //  labelPath: ctgryLabelPath,
             type: 'select',
             enum: 'currency',
-         //   enumTransformation: this.sortEnumeration,
-            columnSize: 3,
-            filter: 'trashSelector'
-        },
-        {
-          field: 'exchangeStandard2',
-         // path: ctgryFieldPath,
-        //  labelPath: ctgryLabelPath,
-          type: 'select',
-          enum: 'currency',
-       //   enumTransformation: this.sortEnumeration,
-          columnSize: 3,
-          filter: 'trashSelector'
-      },
-      {
-        field: 'exchangeStandard3',
-       // path: ctgryFieldPath,
-      //  labelPath: ctgryLabelPath,
-        type: 'select',
-        enum: 'currency',
-     //   enumTransformation: this.sortEnumeration,
-        columnSize: 3,
-        filter: 'trashSelector'
-    },
+            //   enumTransformation: this.sortEnumeration,
+            columnSize: 2
+          },
+          {
+            filter: 'newFamilyMemberSelector',
+            field: 'resetData',
+            label: 'Reset Data',
+            // hideLabel: true,
+            type: 'button',
+            classCSS: 'button-link',
+            // onClick: showDelegateInformationFunction,
+            columnSize: 2
+          }],
+          [{
+            filter: 'newFamilyMemberSelector',
+            field: 'customer',
+            // path: ctgryFieldPath,
+            //  labelPath: ctgryLabelPath,
+            type: 'select',
+            enum: 'currency',
+            //   enumTransformation: this.sortEnumeration,
+            columnSize: 2
+          },
+           {
+            filter: 'newFamilyMemberSelector',
+            field: 'project',
+            // path: ctgryFieldPath,
+            //  labelPath: ctgryLabelPath,
+            type: 'select',
+            enum: 'currency',
+            //   enumTransformation: this.sortEnumeration,
+            columnSize: 2
+          }, 
+          {
+            filter: 'newFamilyMemberSelector',
+            field: 'subSystem',
+            // path: ctgryFieldPath,
+            //  labelPath: ctgryLabelPath,
+            type: 'select',
+            enum: 'currency',
+            //   enumTransformation: this.sortEnumeration,
+            columnSize: 2
+          },
+          {
+            filter: 'newFamilyMemberSelector',
+            field: 'createMember',
+            label: 'Create member',
+            // hideLabel: true,
+            type: 'button',
+            classCSS: 'button-link',
+            // onClick: showDelegateInformationFunction,
+            columnSize: 2
+          }]
 
-            // {
-            //   field: 'delegateActivitiesLst',
-            //   fieldCode: 'activityCode',
-            //   path: 'delegateActivitiesLst[*].',
-            //   labelCode: 'delegateActivitiesLst.activityCode',
-            //   hideLabel: true,
-            //   type: 'checkbox',
-            //   enum: 'delegateactvtycode',
-            //   disabledDisplayModes: 'r',
-            // },
+          // {
+          //   field: 'delegateActivitiesLst',
+          //   fieldCode: 'activityCode',
+          //   path: 'delegateActivitiesLst[*].',
+          //   labelCode: 'delegateActivitiesLst.activityCode',
+          //   hideLabel: true,
+          //   type: 'checkbox',
+          //   enum: 'delegateactvtycode',
+          //   disabledDisplayModes: 'r',
+          // },
 
 
-            {
-              filter: 'structureSelector',
-              type: 'editableTable',
-              columnSize: 12,
-              settings: {
-                tableTitle: 'Seccond tab table title '
-                // tableTitle: `${UtilCharts.translatedTitleLabels
-                // ['healthTable1'][0]} ${UtilCharts.translatedTitleLabels
-                // ['healthTable1'][1]} ${result.currentYearOption} ${
-                //   UtilCharts.translatedTitleLabels
-                //   ['healthTable1'][2]
-                //   }`
-                ,
-                // 'localizationResource.referential.dashboard.processedData.shortLabel',
-                hideSubHeader: true,
-                columns: HealthTable1.chart(translate),
-                rowClassFunction: (row) => {
-                  return this.getBoundariesColorClass(row, optionalParams);
-                }
-              },
-              items: result.healthitems
-            },
+          // {
+          //   filter: 'documentSelector',
+          //   type: 'editableTable',
+          //   columnSize: 12,
+          //   settings: {
+          //     tableTitle: 'Seccond tab table title '
+          //     // tableTitle: `${UtilCharts.translatedTitleLabels
+          //     // ['healthTable1'][0]} ${UtilCharts.translatedTitleLabels
+          //     // ['healthTable1'][1]} ${result.currentYearOption} ${
+          //     //   UtilCharts.translatedTitleLabels
+          //     //   ['healthTable1'][2]
+          //     //   }`
+          //     ,
+          //     // 'localizationResource.referential.dashboard.processedData.shortLabel',
+          //     hideSubHeader: true,
+          //     columns: HealthTable1.chart(translate),
+          //     rowClassFunction: (row) => {
+          //       return this.getBoundariesColorClass(row, optionalParams);
+          //     }
+          //   },
+          //   items: result.healthitems
+          // },
 
-            {
-              type: 'editableTable',
-              filter: 'trashSelector',
-              columnSize: 12,
-              settings: {
-                tableTitle: 'THIRD tab Table title'
-                // tableTitle: `${UtilCharts.translatedTitleLabels
-                // ['riskAndProtectTable1'][0]} ${UtilCharts.translatedTitleLabels
-                // ['riskAndProtectTable1'][1]} ${result.currentYearOption} ${
-                //   UtilCharts.translatedTitleLabels
-                //   ['riskAndProtectTable1'][2]
-                //   }`
-                ,
-                hideSubHeader: true,
-                columns: RiskAndProtectTable1.chart(translate)
-              },
-              items: result.RiskAndProtectTable1
-            }
-          ]
+          // {
+          //   type: 'editableTable',
+          //   filter: 'newFamilyMemberSelector',
+          //   columnSize: 12,
+          //   settings: {
+          //     tableTitle: 'THIRD tab Table title'
+          //     // tableTitle: `${UtilCharts.translatedTitleLabels
+          //     // ['riskAndProtectTable1'][0]} ${UtilCharts.translatedTitleLabels
+          //     // ['riskAndProtectTable1'][1]} ${result.currentYearOption} ${
+          //     //   UtilCharts.translatedTitleLabels
+          //     //   ['riskAndProtectTable1'][2]
+          //     //   }`
+          //     ,
+          //     hideSubHeader: true,
+          //     columns: RiskAndProtectTable1.chart(translate)
+          //   },
+          //   items: result.RiskAndProtectTable1
+          // }
         ]
       }
     };
@@ -173,34 +326,22 @@ export class MonitoringIndicatorsConfig {
     console.log(UtilCharts.translatedTitleLabels);
     return [
       {
-        field: 'documentsTab',
-        filterName: 'documentsSelector',
+        field: 'documentTab',
+        filterName: 'documentSelector',
         // label: `${UtilCharts.translatedTitleLabels['financialFlowsTab'][0]} ${result.currentYearOption}`
-        label: `Documents`
+        label: `This Document`
         // 'localizationResource.referential.financialFlows.shortLabel'
       },
       {
-        field: 'structureTab',
-        filterName: 'structureSelector',
-        label: 'Structure ' // `${UtilCharts.translatedTitleLabels['healthDashboardsTab'][0]}`
+        field: 'newDocumentTab',
+        filterName: 'newDocumentSelector',
+        label: 'New Document ' // `${UtilCharts.translatedTitleLabels['healthDashboardsTab'][0]}`
         // 'localizationResource.referential.healthDashboards.shortLabel'
       },
       {
-        field: 'trashTab',
-        filterName: 'trashSelector',
-        label: 'Trash' // `${UtilCharts.translatedTitleLabels['riskDashboardsTab'][0]}`
-        // 'localizationResource.referential.riskDashboards.shortLabel'
-      },
-      {
-        field: 'listsTab',
-        filterName: 'listsSelector',
-        label: 'Lists' // `${UtilCharts.translatedTitleLabels['riskDashboardsTab'][0]}`
-        // 'localizationResource.referential.riskDashboards.shortLabel'
-      },
-      {
-        field: 'settingsTab',
-        filterName: 'settingsSelector',
-        label: 'Settings' // `${UtilCharts.translatedTitleLabels['riskDashboardsTab'][0]}`
+        field: 'newFamilyMemberTab',
+        filterName: 'newFamilyMemberSelector',
+        label: 'New Family member' // `${UtilCharts.translatedTitleLabels['riskDashboardsTab'][0]}`
         // 'localizationResource.referential.riskDashboards.shortLabel'
       }
     ];
