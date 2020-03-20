@@ -45,7 +45,7 @@ export class SimpleInputComponent extends ValidationComponent implements OnInit,
   }
 
   ngOnInit() {
-    // formGroup.controls[config.field]
+
     if (this.updates) {
       this.subscription = this.updates.updatesForId(this.getId())
         .subscribe(configUpdate => {
@@ -165,6 +165,7 @@ export class SimpleInputComponent extends ValidationComponent implements OnInit,
   }
 
   onChangeValue(config: any, event: any) {
+    console.log('event', event); 
     const newValue = this.getNewValue(event, config);
     this.storeData(config, newValue);
     this.updateControlValue(config, newValue);
@@ -215,6 +216,7 @@ export class SimpleInputComponent extends ValidationComponent implements OnInit,
         this.formGroup.updateValueAndValidity();
       }
     }
+    console.log('result', result);
     return result;
   }
 
@@ -290,6 +292,7 @@ export class SimpleInputComponent extends ValidationComponent implements OnInit,
   }
 
   private storeData(config: any, newValue: any): void {
+    // console.log('this.config.field', this.config.field); 
     if (config.storeData) {
       // custom storage function from the configuration
       config.storeData(this.collection, newValue);
@@ -306,11 +309,15 @@ export class SimpleInputComponent extends ValidationComponent implements OnInit,
       }
       this.formGroup.controls[config.field].setValue(controlValue);
       this.formGroup.updateValueAndValidity();
+      console.log('controlValue', controlValue); 
+      console.log('this.config.field', this.config.field); 
+      console.log('formGroup config simple', this.formGroup);
     }
   }
 
   private storeDataDefault(config: any, newValue: any): void {
     if (config.type === 'checkbox') {
+      console.log('config.type simple', config.type);
       const fieldCode = config.fieldCode;
       let fieldVal: any[] = this.collection[config.field];
       if (!fieldVal) {
@@ -322,23 +329,13 @@ export class SimpleInputComponent extends ValidationComponent implements OnInit,
         obj[fieldCode] = newValue.code;
         fieldVal.push(obj);
       } else {
-        const index = fieldVal.findIndex(obj => obj[fieldCode] !== newValue.code);
+        const index = fieldVal.findIndex(obj => obj[fieldCode] === newValue.code);
         if (index >= 0) {
-          fieldVal.splice(index);
+          fieldVal.splice(index, 1);
         }
       }
     } else {
-      const field = config.fieldCode ? config.fieldCode : config.field;
-      const fullPath = config.path;
-      if (fullPath) {
-        const path = fullPath.substring(0, fullPath.length - 1);
-        if (!this.collection[path]) {
-          this.collection[path] = {};
-        }
-        this.collection[path][field] = newValue;
-      } else {
-        this.collection[field] = newValue;
-      }
+       this.service.initializeValue(this.collection, config, newValue);
     }
   }
 
@@ -415,8 +412,6 @@ export class SimpleInputComponent extends ValidationComponent implements OnInit,
     );
     this.formGroup.setControl(field, newControl);
     this.formGroup.updateValueAndValidity();
-    console.log('formGroup config simple', this.formGroup.controls[this.config.field]);
-    
   }
 
   private applyDefaultLabel(field: string, line: any): void {
@@ -460,19 +455,20 @@ export class SimpleInputComponent extends ValidationComponent implements OnInit,
 
   private buildEnumerationList(enumCode: string, line: any, newVal) {
     const enumTranslationProperty = `localizationEnumValue.${this.database}.${enumCode}`;
-    this.translate.get(enumTranslationProperty)
+    this.translate.stream(enumTranslationProperty)
       .subscribe(res => {
         let enumerationLst = Object.keys(res)
           .map(key => (
             {
               code: key,
-              display: this.getEnumTranslationCode(enumCode, key)
+              display: res[key]['label']
             })
           );
         if (line.enumTransformation) {
           enumerationLst = line.enumTransformation(
             { enumCodeLst: enumerationLst, newValue: newVal, collection: this.collection });
         }
+        console.log('enumerationLst', enumerationLst); 
         line.optionLst = enumerationLst;
       });
   }
@@ -482,7 +478,6 @@ export class SimpleInputComponent extends ValidationComponent implements OnInit,
   }
 
   isDisplayDisabled(config: any): boolean {
-    console.log('this.collection simple', this.collection);
     if (this.isViewMode()) {
       return true;
     }
@@ -503,6 +498,7 @@ export class SimpleInputComponent extends ValidationComponent implements OnInit,
         this.dateValidation(line.validators.date),
         line.validators.number ? CustomValidators.number : Validators.nullValidator,
         line.validators.integer ? CustomValidators.number : Validators.nullValidator,
+        line.validators.amount ? CustomValidators.amount : Validators.nullValidator,
         line.validators.minLength && line.validators.minLength > 0
           ? Validators.minLength(line.validators.minLength) : Validators.nullValidator,
         line.validators.maxLength && line.validators.maxLength > 0
