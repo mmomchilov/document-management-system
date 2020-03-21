@@ -27,11 +27,11 @@ import {
   BaCard,
   //   BaCard2,
   //   BaEChartFree,
-  //   BaMenuItem,
-  //   BaMenu,
+  BaMenuItem,
+  BaMenu,
   //   BaMsgCenter,
   //   BaPageTop,
-  //   BaSidebar,
+  BaSidebar,
   //   SelectItems,
   //   SearchItems,
   //   TranslateCustomLoader,
@@ -134,13 +134,15 @@ import {
   // BaImageLoaderService,
   // BaThemePreloader,
   // BaThemeSpinner,
+  BaMenuService,
+  SearchService,
   JsonPath,
   // ConfigLoaderService,
   // TranslationLoaderService,
   // UserPerfsService
-} from './services/jsonPath';
-import { SearchService } from './services/search';
-// import { BaMenuService } from './services/';
+} from './services';
+// import { SearchService } from './services/search';
+// import { BaMenuService } from './services/baMenu';
 
 
 
@@ -153,11 +155,11 @@ const NGA_COMPONENTS = [
   BaCard,
   // BaCard2,
   // BaEChartFree,
-  // BaMenuItem,
-  // BaMenu,
+  BaMenuItem,
+  BaMenu,
   // BaMsgCenter,
   // BaPageTop,
-  // BaSidebar,
+  BaSidebar,
   // SelectItems,
   // SearchItems,
   // CustomCard,
@@ -253,7 +255,7 @@ const NGA_SERVICES = [
   // BaImageLoaderService,
   // BaThemePreloader,
   // BaThemeSpinner,
-  // BaMenuService,
+  BaMenuService,
   TranslateService,
   // ConfigLoaderService,
   // TranslationLoaderService,
