@@ -12,6 +12,7 @@ import { CustomMissingTranslationHandler } from './theme/components/';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { MonitoringIndicatorsComponent } from './pages/monitoringIndicators/monitoringIndicators.component';
+import { GlobalState } from './global.state';
 
 const appRoutes: Routes = [
   { path: 'mainPage', component: MonitoringIndicatorsComponent },
@@ -46,7 +47,7 @@ const appRoutes: Routes = [
       missingTranslationHandler: { provide: MissingTranslationHandler, useClass: CustomMissingTranslationHandler }
     }),
   ],
-  providers: [],
+  providers: [GlobalState],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
