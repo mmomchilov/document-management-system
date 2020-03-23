@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgaModule } from '../../theme/nga.module';
-import { routing } from './monitoringIndicators.routes';
+import { routing } from './documents.routes';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { MonitoringIndicatorsComponent } from './monitoringIndicators.component';
+import { DocumentsComponent } from './documents.component';
 // import { PartnerInfoService } from '../../theme/services/partnerInfo';
 
 @NgModule({
@@ -23,11 +23,11 @@ import { MonitoringIndicatorsComponent } from './monitoringIndicators.component'
     BsDropdownModule.forRoot()
   ],
   declarations: [
-    MonitoringIndicatorsComponent
+    DocumentsComponent
   ],
   entryComponents: [],
   providers: []
   // providers: [PartnerInfoService]
 })
 
-export class MonitoringIndicatorsModule { }
+export class DocumentsModule { }

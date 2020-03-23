@@ -1,12 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { MonitoringIndicatorsComponent } from './monitoringIndicators.component';
+import { DocumentsComponent } from './documents.component';
 import { ModuleWithProviders } from '@angular/core';
 
 export const routes: Routes = [
   {
     path: '',
-    component: MonitoringIndicatorsComponent,
+    component: DocumentsComponent,
     children: []
   }
 ];

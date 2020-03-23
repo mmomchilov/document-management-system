@@ -7,18 +7,18 @@ import { FormBuilder } from '@angular/forms';
 // import { GlobalState } from '../../global.state';
 // import { AppState } from '../../app.service';
 import { ValidationComponent } from '../common/components/common/validation';
-import { MonitoringIndicatorsConfig } from './cardsConfig/monitoringIndicatorsCard';
-import { CardConfiguration } from './../../theme/components/cardDetail/configurationClasses/cardConfiguration';
+import { DocumentsConfig } from './cardsConfig/documentsConfigCard';
+import { CardConfiguration } from '../../theme/components/cardDetail/configurationClasses/cardConfiguration';
 import { Subscription } from 'rxjs';
 // import { PartnerInfoService } from 'app/theme/services/partnerInfo';
 import { UtilCharts } from './cardsConfig/utilCharts';
 
 @Component({
-  selector: 'monitoring-indicators',
-  templateUrl: './monitoringIndicators.component.html',
-  styleUrls: ['./monitoringIndicators.component.scss']
+  selector: 'documents',
+  templateUrl: './documents.component.html',
+  styleUrls: ['./documents.component.scss']
 })
-export class MonitoringIndicatorsComponent extends ValidationComponent implements OnInit, DoCheck, OnDestroy {
+export class DocumentsComponent extends ValidationComponent implements OnInit, DoCheck, OnDestroy {
   database = 'database'; // agreement
   collectionId = 'cards'; //
   collection = {};
@@ -126,7 +126,7 @@ export class MonitoringIndicatorsComponent extends ValidationComponent implement
   }
 
   private getTitle(entityCode: string): string {
-    const titleOnly: string = `localizationResource.common.monitoringIndicators.shortLabel`;
+    const titleOnly: string = `localizationResource.common.documents.shortLabel`;
     return titleOnly;
   }
 
@@ -266,7 +266,7 @@ export class MonitoringIndicatorsComponent extends ValidationComponent implement
     //       }
     // console.log('results!', results);
     //       this.configs =
-    //         [MonitoringIndicatorsConfig.generateCard(results, optionalParams, this.selectedTab, this.translate)];
+    //         [DocumentsConfig.generateCard(results, optionalParams, this.selectedTab, this.translate)];
     //       console.log('this.configs', this.configs);
     //     });
 
@@ -289,7 +289,7 @@ export class MonitoringIndicatorsComponent extends ValidationComponent implement
 
 
     this.configs =
-      [MonitoringIndicatorsConfig.generateCard(results, {}, this.selectedTab, this.translate)];
+      [DocumentsConfig.generateCard(results, {}, this.selectedTab, this.translate)];
     // console.log('this.configs', this.configs);
 
   }

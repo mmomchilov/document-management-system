@@ -11,12 +11,12 @@ import { CustomMissingTranslationHandler } from './theme/components/';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
-import { MonitoringIndicatorsComponent } from './pages/monitoringIndicators/monitoringIndicators.component';
+import { DocumentsComponent } from './pages/documents/documents.component';
 import { GlobalState } from './global.state';
 import { Structure } from './pages/structure';
 
 const appRoutes: Routes = [
-  { path: 'documents', component: MonitoringIndicatorsComponent },
+  { path: 'documents', component: DocumentsComponent },
   //  { path: 'secondPage', component: SecondPageComponent },
 
   {
@@ -29,13 +29,13 @@ const appRoutes: Routes = [
     component: Structure
   },
 
-  { path: '**', component: MonitoringIndicatorsComponent }
+  { path: '**', component: DocumentsComponent }
 ];
 
 
 @NgModule({
   declarations: [
-    MonitoringIndicatorsComponent,
+    DocumentsComponent,
     Structure,
     AppComponent
   ],

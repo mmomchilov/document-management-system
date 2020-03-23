@@ -1,19 +1,19 @@
 
 // import { TabConfiguration } from 'app/theme/components/cardDetail/configurationClasses/tabConfigurationts';
-import { RiskAndProtectChart1 } from '../cardsConfig/riskAndProtectChart1';
-import { RiskAndProtectChart2 } from '../cardsConfig/riskAndProtectChart2';
-import { RiskAndProtectTable1 } from '../cardsConfig/riskAndProtectTable1';
-import { FinancialFlowsChart1 } from '../cardsConfig/financialFlowsChart1';
-import { FinancialFlowsChart2 } from '../cardsConfig/financialFlowsChart2';
-import { FinancialFlowsChart3 } from '../cardsConfig/financialFlowsChart3';
-import { FinancialFlowsChart4 } from '../cardsConfig/financialFlowsChart4';
-import { HealthChart1 } from '../cardsConfig/healthChart1';
-import { HealthChart2 } from '../cardsConfig/healthChart2';
-import { HealthTable1 } from '../cardsConfig/healthTable1';
+import { RiskAndProtectChart1 } from './riskAndProtectChart1';
+import { RiskAndProtectChart2 } from './riskAndProtectChart2';
+import { RiskAndProtectTable1 } from './riskAndProtectTable1';
+import { FinancialFlowsChart1 } from './financialFlowsChart1';
+import { FinancialFlowsChart2 } from './financialFlowsChart2';
+import { FinancialFlowsChart3 } from './financialFlowsChart3';
+import { FinancialFlowsChart4 } from './financialFlowsChart4';
+import { HealthChart1 } from './healthChart1';
+import { HealthChart2 } from './healthChart2';
+import { HealthTable1 } from './healthTable1';
 import { UtilCharts } from './utilCharts';
 import { TabConfiguration } from 'src/app/theme/components/cardDetail/configurationClasses/tabConfigurationts';
 
-export class MonitoringIndicatorsConfig {
+export class DocumentsConfig {
 
   static generateCard(result, optionalParams, selectedTab, translate): any {
     const me = UtilCharts.translatedTitleLabels['healthTable1'];
