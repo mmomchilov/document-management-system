@@ -277,7 +277,7 @@ export class MonitoringIndicatorsConfig {
 
 
           [{
-            filter: 'documentSelector',
+            filter: 'documentsSelector',
             type: 'editableTable',
             columnSize: 12,
             settings: {
@@ -327,7 +327,7 @@ export class MonitoringIndicatorsConfig {
     return [
       {
         field: 'documentTab',
-        filterName: 'documentSelector',
+        filterName: 'documentsSelector', 
         // label: `${UtilCharts.translatedTitleLabels['financialFlowsTab'][0]} ${result.currentYearOption}`
         label: `This Document`
         // 'localizationResource.referential.financialFlows.shortLabel'
