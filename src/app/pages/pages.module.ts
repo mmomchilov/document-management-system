@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './pages.routing';
 import { NgaModule } from '../theme/nga.module';
 import {
-  // RoutingService,
+  RoutingService,
   // SearchService,
   CollectionDetailsService,
   // NotificationService,
@@ -81,7 +81,7 @@ import { DetailsModal } from './search/modals/details/details.modal.component';
     // CancelModal
   ],
   providers: [
-    // RoutingService,
+    RoutingService,
     // SearchService,
     SearchComponent,
     CollectionDetailsService,

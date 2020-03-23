@@ -25,8 +25,8 @@ export class CollectionService {
 
     getFieldVal(field: string, line: any, collection): any {
 
-        console.log('collection', collection);
-        console.log('line', line);
+       // console.log('collection', collection);
+      //  console.log('line', line);
         let path = '';
         if (line.path) {
             path = line.path;
@@ -42,7 +42,7 @@ export class CollectionService {
         if (!fieldVal && line.defaultValue) {
             fieldVal = line.defaultValue;
         }
-        console.log('fieldVal', fieldVal);
+        // console.log('fieldVal', fieldVal);
 
         // if (line.type === 'date') {
         //   if (!this.isViewMode()) {

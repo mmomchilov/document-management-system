@@ -3,7 +3,7 @@ export * from './baMenu';
 // export * from './baThemePreloader';
 // export * from './baThemeSpinner';
 export * from './search';
-// export * from './routing';
+export * from './routing';
 export * from './jsonPath';
 // export * from './configLoader';
 // export * from './translationLoader';

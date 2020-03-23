@@ -13,16 +13,22 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { MonitoringIndicatorsComponent } from './pages/monitoringIndicators/monitoringIndicators.component';
 import { GlobalState } from './global.state';
+import { Structure } from './pages/structure';
 
 const appRoutes: Routes = [
-  { path: 'mainPage', component: MonitoringIndicatorsComponent },
+  { path: 'documents', component: MonitoringIndicatorsComponent },
   //  { path: 'secondPage', component: SecondPageComponent },
 
   {
     path: '',
-    redirectTo: '/mainPage',
+    redirectTo: '/documents',
     pathMatch: 'full'
   },
+  {
+    path: 'pages/structure',
+    component: Structure
+  },
+
   { path: '**', component: MonitoringIndicatorsComponent }
 ];
 
@@ -30,6 +36,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     MonitoringIndicatorsComponent,
+    Structure,
     AppComponent
   ],
   imports: [

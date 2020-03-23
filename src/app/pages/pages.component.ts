@@ -1,9 +1,9 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { Routes } from '@angular/router';
 
-// import { BaMenuService, SearchService, RoutingService, CollectionDetailsService } from '../theme';
-// import { GlobalState } from '../global.state';
-// import { AppState } from '../app.service';
+import { BaMenuService, SearchService, RoutingService, CollectionDetailsService } from '../theme';
+import { GlobalState } from '../global.state';
+import { AppState } from '../app.service';
 import { SearchComponent } from './search';
 import { PAGES_MENU } from './pages.menu';
 import { Router } from '@angular/router';
@@ -44,57 +44,57 @@ export class Pages {
 
 	constructor(
 		private http: HttpClient,
-		// private _modalService: BsModalService,
-		// private _menuService: BaMenuService,
+		private _modalService: BsModalService,
+		private _menuService: BaMenuService,
 		private router: Router,
-		// private _state: GlobalState,
+		private _state: GlobalState,
 		private translate: TranslateService,
-		// private routingService: RoutingService,
-		// private searchService: SearchService,
-		// private collectionDetails: CollectionDetailsService,
+		private routingService: RoutingService,
+		private searchService: SearchService,
+		private collectionDetails: CollectionDetailsService,
 		private searchComponent: SearchComponent,
-		// private _appState: AppState
+		private _appState: AppState
 	) {
 		// Juridical cache
-		// for (let juridical of this._appState.get('config.juridicals')) {
-		// 	this.juridicalCache['' + juridical.BUID] = juridical.legalName;
-		// }
-		// var juConfig = (config) => {
-		// 	for (let juridical of config) {
-		// 		this.juridicalCache['' + juridical.BUID] = juridical.legalName;
-		// 	}
-		// };
-		// this._state.subscribe('config.juridicals', 'pagesJUConfig', juConfig);
-		// this.subscribed['config.juridicals'] = 'pagesJUConfig';
+		for (let juridical of this._appState.get('config.juridicals')) {
+			this.juridicalCache['' + juridical.BUID] = juridical.legalName;
+		}
+		var juConfig = (config) => {
+			for (let juridical of config) {
+				this.juridicalCache['' + juridical.BUID] = juridical.legalName;
+			}
+		};
+		this._state.subscribe('config.juridicals', 'pagesJUConfig', juConfig);
+		this.subscribed['config.juridicals'] = 'pagesJUConfig';
 
 		// Agreement Cache
-		// for (let agreement of this._appState.get('config.delegationList')) {
-		// 	this.agreementCache['' + agreement.agreementId] = agreement.agreementCode;
-		// }
-		// var delegationList = (config) => {
-		// 	for (let agreement of config) {
-		// 		this.agreementCache['' + agreement.agreementId] = agreement.agreementCode;
-		// 	}
-		// };
-		// this._state.subscribe('config.delegationList', 'pagesDelegationLst', delegationList);
-		// this.subscribed['config.delegationList'] = 'pagesDelegationLst';
+		for (let agreement of this._appState.get('config.delegationList')) {
+			this.agreementCache['' + agreement.agreementId] = agreement.agreementCode;
+		}
+		var delegationList = (config) => {
+			for (let agreement of config) {
+				this.agreementCache['' + agreement.agreementId] = agreement.agreementCode;
+			}
+		};
+		this._state.subscribe('config.delegationList', 'pagesDelegationLst', delegationList);
+		this.subscribed['config.delegationList'] = 'pagesDelegationLst';
 
-		// var searchCollection = (conf) => {
-		// 	this.items.id = 'searchCollection';
-		// 	this.items.title = 'Collection';
-		// 	this.items.hideLabel = true;
-		// 	this.items.hideAll = false;
-		// 	let options: any = [];
-		// 	for (let index = 0; index < conf.all.length; index++) {
-		// 		let option: any = {};
-		// 		option.label = 'localizationResource.common.' + conf.all[index] + '.shortLabel';
-		// 		option.value = conf.all[index];
-		// 		options.push(option);
-		// 	}
-		// 	this.items.options = options;
-		// };
-		// this._state.subscribe('config.searchableCollections', 'pagesSearchCollection', searchCollection);
-		// this.subscribed['config.searchableCollections'] = 'pagesSearchCollection';
+		var searchCollection = (conf) => {
+			this.items.id = 'searchCollection';
+			this.items.title = 'Collection';
+			this.items.hideLabel = true;
+			this.items.hideAll = false;
+			let options: any = [];
+			for (let index = 0; index < conf.all.length; index++) {
+				let option: any = {};
+				option.label = 'localizationResource.common.' + conf.all[index] + '.shortLabel';
+				option.value = conf.all[index];
+				options.push(option);
+			}
+			this.items.options = options;
+		};
+		this._state.subscribe('config.searchableCollections', 'pagesSearchCollection', searchCollection);
+		this.subscribed['config.searchableCollections'] = 'pagesSearchCollection';
 
 		var displayCol = (conf) => {
 			Object.keys(conf).forEach((collectionName) => {
@@ -134,8 +134,8 @@ export class Pages {
 				}
 			});
 		};
-		// this._state.subscribe('config.displayableColumns', 'pagesDisplayCol', displayCol);
-		// this.subscribed['config.displayableColumns'] = 'pagesDisplayCol';
+		this._state.subscribe('config.displayableColumns', 'pagesDisplayCol', displayCol);
+		this.subscribed['config.displayableColumns'] = 'pagesDisplayCol';
 	}
 
 	getSettings(collection: any) {
@@ -230,14 +230,14 @@ export class Pages {
 	}
 
 	ngOnInit() {
-		// this._menuService.updateMenuByRoutes(<Routes>PAGES_MENU);
+		this._menuService.updateMenuByRoutes(<Routes>PAGES_MENU);
 		this.selectedItem = 'all';
 	}
 
 	ngOnDestroy() {
-		// Object.keys(this.subscribed).forEach(eventId => {
-		// 	this._state.unsubscribe(eventId, this.subscribed[eventId]);
-		// });
+		Object.keys(this.subscribed).forEach(eventId => {
+			this._state.unsubscribe(eventId, this.subscribed[eventId]);
+		});
 	}
 
 	sortByOrder(columnA: any, columnB: any) {

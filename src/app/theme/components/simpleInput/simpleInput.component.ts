@@ -468,7 +468,7 @@ export class SimpleInputComponent extends ValidationComponent implements OnInit,
           enumerationLst = line.enumTransformation(
             { enumCodeLst: enumerationLst, newValue: newVal, collection: this.collection });
         }
-        console.log('enumerationLst', enumerationLst); 
+      //  console.log('enumerationLst', enumerationLst); 
         line.optionLst = enumerationLst;
       });
   }

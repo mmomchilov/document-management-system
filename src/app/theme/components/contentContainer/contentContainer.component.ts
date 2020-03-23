@@ -25,7 +25,6 @@ export class ContentContainerComponent implements OnInit, OnChanges {
   @Output() selectedFilterEvent = new EventEmitter();
 
   tabs: any;
-  // private selectedFilter: string;
   selectedFilter: string;
   contentList;
   formGroup = new FormGroup({});
@@ -53,7 +52,6 @@ export class ContentContainerComponent implements OnInit, OnChanges {
   }
 
   updateTableItems() {
-    console.log('this.contentList', this.contentList);
     this.contentList.forEach(row => {
       row.forEach(element => {
         if (element.type === 'editableTable' || element.type === 'table') {
@@ -70,21 +68,16 @@ export class ContentContainerComponent implements OnInit, OnChanges {
 
   private initTabs() {
     if (this.config) {
-      // console.log('this.config.tabs !!!!!!!!', this.config.tabs );
       this.tabs = this.config.tabs ? this.config.tabs : undefined;
       this.selectedFilter = this.config.selectedTab;
-      // console.log('this.this.tabs !!!!!!!!!!!!!?????????????', this.tabs );
     }
   }
 
   // Smart Table
   getTableSettings(config) {
-    // console.log('config config', config);
-    // console.log('config log', config);
     if (typeof config.settings === 'function') {
       config.settings = config.settings(this.collection);
     }
-    // console.log('config.settings', config.settings);
     return config.settings;
   }
   private applyDefaultTableItems(config: any): void {
@@ -123,6 +116,7 @@ export class ContentContainerComponent implements OnInit, OnChanges {
     return '';
   }
 
+  
   emitContentEvent(event) {
     if (event && event.onChangeValue) {
       event.onChangeValue

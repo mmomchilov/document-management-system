@@ -17,7 +17,7 @@ export class MonitoringIndicatorsConfig {
 
   static generateCard(result, optionalParams, selectedTab, translate): any {
     const me = UtilCharts.translatedTitleLabels['healthTable1'];
-    console.log('me', me);
+    // console.log('me', me);
 
     return {
       title: undefined, // remove card header
@@ -262,7 +262,7 @@ export class MonitoringIndicatorsConfig {
             classCSS: 'button-link',
             // onClick: showDelegateInformationFunction,
             columnSize: 2
-          }]
+          }],
 
           // {
           //   field: 'delegateActivitiesLst',
@@ -276,47 +276,47 @@ export class MonitoringIndicatorsConfig {
           // },
 
 
-          // {
-          //   filter: 'documentSelector',
-          //   type: 'editableTable',
-          //   columnSize: 12,
-          //   settings: {
-          //     tableTitle: 'Seccond tab table title '
-          //     // tableTitle: `${UtilCharts.translatedTitleLabels
-          //     // ['healthTable1'][0]} ${UtilCharts.translatedTitleLabels
-          //     // ['healthTable1'][1]} ${result.currentYearOption} ${
-          //     //   UtilCharts.translatedTitleLabels
-          //     //   ['healthTable1'][2]
-          //     //   }`
-          //     ,
-          //     // 'localizationResource.referential.dashboard.processedData.shortLabel',
-          //     hideSubHeader: true,
-          //     columns: HealthTable1.chart(translate),
-          //     rowClassFunction: (row) => {
-          //       return this.getBoundariesColorClass(row, optionalParams);
-          //     }
-          //   },
-          //   items: result.healthitems
-          // },
+          [{
+            filter: 'documentSelector',
+            type: 'editableTable',
+            columnSize: 12,
+            settings: {
+              tableTitle: 'Seccond tab table title '
+              // tableTitle: `${UtilCharts.translatedTitleLabels
+              // ['healthTable1'][0]} ${UtilCharts.translatedTitleLabels
+              // ['healthTable1'][1]} ${result.currentYearOption} ${
+              //   UtilCharts.translatedTitleLabels
+              //   ['healthTable1'][2]
+              //   }`
+              ,
+              // 'localizationResource.referential.dashboard.processedData.shortLabel',
+              hideSubHeader: true,
+              columns: HealthTable1.chart(translate),
+              rowClassFunction: (row) => {
+                return this.getBoundariesColorClass(row, optionalParams);
+              }
+            },
+            items: result.healthitems
+          }],
 
-          // {
-          //   type: 'editableTable',
-          //   filter: 'newFamilyMemberSelector',
-          //   columnSize: 12,
-          //   settings: {
-          //     tableTitle: 'THIRD tab Table title'
-          //     // tableTitle: `${UtilCharts.translatedTitleLabels
-          //     // ['riskAndProtectTable1'][0]} ${UtilCharts.translatedTitleLabels
-          //     // ['riskAndProtectTable1'][1]} ${result.currentYearOption} ${
-          //     //   UtilCharts.translatedTitleLabels
-          //     //   ['riskAndProtectTable1'][2]
-          //     //   }`
-          //     ,
-          //     hideSubHeader: true,
-          //     columns: RiskAndProtectTable1.chart(translate)
-          //   },
-          //   items: result.RiskAndProtectTable1
-          // }
+          [{
+            type: 'editableTable',
+            filter: 'newFamilyMemberSelector',
+            columnSize: 12,
+            settings: {
+              tableTitle: 'THIRD tab Table title'
+              // tableTitle: `${UtilCharts.translatedTitleLabels
+              // ['riskAndProtectTable1'][0]} ${UtilCharts.translatedTitleLabels
+              // ['riskAndProtectTable1'][1]} ${result.currentYearOption} ${
+              //   UtilCharts.translatedTitleLabels
+              //   ['riskAndProtectTable1'][2]
+              //   }`
+              ,
+              hideSubHeader: true,
+              columns: RiskAndProtectTable1.chart(translate)
+            },
+            items: result.RiskAndProtectTable1
+          }]
         ]
       }
     };

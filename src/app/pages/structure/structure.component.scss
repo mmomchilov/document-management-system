@@ -1,0 +1,32 @@
+:host::ng-deep ng2-smart-table table {
+
+  tr,
+  td,
+  th {
+    border: 2px solid #ADD8E6;
+    padding: 0;
+  }
+
+  tr {
+
+    line-height: 1em;
+
+    th,
+    td {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+}
+
+:host::ng-deep .center {
+  text-align: center;
+}
+
+:host::ng-deep .left {
+  text-align: left;
+}
+
+:host::ng-deep div.editableTable {
+  overflow-x: auto;
+}

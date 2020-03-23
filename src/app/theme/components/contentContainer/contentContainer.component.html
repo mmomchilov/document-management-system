@@ -19,7 +19,7 @@
          content.columnSize && isVisible(content) ? 'col-' + content.columnSize :'' ]">
       <div [ngSwitch]="getComponent(content.type)">
         <gen-simple-input *ngSwitchCase="'simpleInputs'"
-                          [ngClass]="['col-' + columnSize]"
+                          [ngClass]="['col-' + 12]"
                           [hidden]="!isVisible(content)"
                           [parentId]="parentId"
                           [displayMode]="displayMode"
@@ -30,7 +30,6 @@
                           [config]="content"
                           [formGroup]="formGroup"
                           [updates]="communicationService"
-                          (onShowDetails)="showDetails($event)"
                           (valueChanged)="emitContentEvent($event)">
         </gen-simple-input>
 

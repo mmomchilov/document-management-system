@@ -7,20 +7,20 @@ import { FormBuilder } from '@angular/forms';
 // import { GlobalState } from '../../global.state';
 // import { AppState } from '../../app.service';
 import { ValidationComponent } from '../common/components/common/validation';
-import { MonitoringIndicatorsConfig } from './cardsConfig/monitoringIndicatorsCard';
-import { CardConfiguration } from './../../theme/components/cardDetail/configurationClasses/cardConfiguration';
+import { StructureConfig } from './cardsConfig/structureCard';
+import { CardConfiguration } from '../../theme/components/cardDetail/configurationClasses/cardConfiguration';
 import { Subscription } from 'rxjs';
 // import { PartnerInfoService } from 'app/theme/services/partnerInfo';
 import { UtilCharts } from './cardsConfig/utilCharts';
 
 @Component({
-  selector: 'monitoring-indicators',
-  templateUrl: './monitoringIndicators.component.html',
-  styleUrls: ['./monitoringIndicators.component.scss']
+  selector: 'structure',
+  templateUrl: './structure.component.html',
+  styleUrls: ['./structure.component.scss']
 })
-export class MonitoringIndicatorsComponent extends ValidationComponent implements OnInit, DoCheck, OnDestroy {
+export class Structure extends ValidationComponent implements OnInit, DoCheck, OnDestroy {
   database = 'database'; // agreement
-  collectionId = 'cards'; //
+  collectionId = 'cards'; // 
   collection = {};
   juridicalEntity: any;
   private juridicalCache: any = [];
@@ -100,7 +100,7 @@ export class MonitoringIndicatorsComponent extends ValidationComponent implement
     UtilCharts.translateHealthTable1Columns(this.translate);
     UtilCharts.translateRPTable1Columns(this.translate);
     this.setFormGroup(this.fb.group({}));
-    // console.log('formGroup formGroup formGroup', this.formGroup);
+    console.log('formGroup formGroup formGroup', this.formGroup);
     // this.riskCarrierOptions = this.routing.data.riskCarrierOptions;
     this.setCardsConfig();
     // } else { this.router.navigate(['pages/partner']); }
@@ -126,7 +126,7 @@ export class MonitoringIndicatorsComponent extends ValidationComponent implement
   }
 
   private getTitle(entityCode: string): string {
-    const titleOnly: string = `localizationResource.common.monitoringIndicators.shortLabel`;
+    const titleOnly: string = `localizationResource.common.structure.shortLabel`;
     return titleOnly;
   }
 
@@ -264,7 +264,7 @@ export class MonitoringIndicatorsComponent extends ValidationComponent implement
       //             break;
     }
     //       }
-    // console.log('results!', results);
+    console.log('results!', results);
     //       this.configs =
     //         [MonitoringIndicatorsConfig.generateCard(results, optionalParams, this.selectedTab, this.translate)];
     //       console.log('this.configs', this.configs);
@@ -289,7 +289,7 @@ export class MonitoringIndicatorsComponent extends ValidationComponent implement
 
 
     this.configs =
-      [MonitoringIndicatorsConfig.generateCard(results, {}, this.selectedTab, this.translate)];
+      [StructureConfig.generateCard(results, {}, this.selectedTab, this.translate)];
     // console.log('this.configs', this.configs);
 
   }
@@ -340,7 +340,7 @@ export class MonitoringIndicatorsComponent extends ValidationComponent implement
         });
       }
     }
-    // console.log('data', data);
+    console.log('data', data);
     return data;
   }
   averageAnualCost(paidAmount, clmFldrNbr) { return clmFldrNbr === 0 ? 0 : paidAmount / clmFldrNbr; } // ?? formula fix
