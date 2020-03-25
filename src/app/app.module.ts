@@ -16,19 +16,16 @@ import { GlobalState } from './global.state';
 import { Structure } from './pages/structure';
 
 const appRoutes: Routes = [
-  { path: 'documents', component: DocumentsComponent },
-  //  { path: 'secondPage', component: SecondPageComponent },
 
-  {
-    path: '',
-    redirectTo: '/documents',
-    pathMatch: 'full'
-  },
-  {
-    path: 'pages/structure',
-    component: Structure
-  },
 
+  { path: 'pages/documents', component: DocumentsComponent },
+  { path: 'pages/structure', component: Structure },
+  // { path: 'pages/structure', component: Structure },
+  // { path: 'pages/structure', component: Structure },
+  // { path: 'pages/structure', component: Structure },
+  // { path: 'pages/structure', component: Structure },
+
+  { path: '', redirectTo: 'pages/documents', pathMatch: 'full' },
   { path: '**', component: DocumentsComponent }
 ];
 

@@ -32,14 +32,14 @@ export class DocumentsConfig {
         // fields in tabs
         fields: [
 
-          [{
-            field: 'ediLst',
-            // path: `${this.category}.`,
-            type: 'comment',
-            columnSize: 12,
-            // disabledDisplayModes: 'cur',
-            filter: 'newFamilyMemberSelector'
-          }],
+          // [{
+          //   field: 'ediLst',
+          //   // path: `${this.category}.`,
+          //   type: 'comment',
+          //   columnSize: 12,
+          //   // disabledDisplayModes: 'cur',
+          //   filter: 'newFamilyMemberSelector'
+          // }],
 
 
 

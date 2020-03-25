@@ -7,7 +7,7 @@ import { routing } from './structure.routes';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { MonitoringIndicatorsComponent } from './structure.component';
+import { Structure } from './structure.component';
 // import { PartnerInfoService } from '../../theme/services/partnerInfo';
 
 @NgModule({
@@ -23,11 +23,11 @@ import { MonitoringIndicatorsComponent } from './structure.component';
     BsDropdownModule.forRoot()
   ],
   declarations: [
-    MonitoringIndicatorsComponent
+    Structure
   ],
   entryComponents: [],
   providers: []
   // providers: [PartnerInfoService]
 })
 
-export class MonitoringIndicatorsModule { }
+export class StructureModule { }
