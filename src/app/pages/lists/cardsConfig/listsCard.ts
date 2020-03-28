@@ -34,7 +34,7 @@ export class ListsConfig {
                                 columns: DocumentTypeTable.generateColumns(translate)
 
                             },
-                            //   items: data[0]
+                             items:  DocumentTypeTable.mockData()
                         },
                         {
                             type: 'editableTable',
