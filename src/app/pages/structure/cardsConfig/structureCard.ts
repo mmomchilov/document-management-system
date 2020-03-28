@@ -20,7 +20,7 @@ export class StructureConfig {
     // console.log('me', me);
 
     return {
-      title: 'Structure', // 'localizationResource.common.dashboard.keyNumbers.shortLabel',
+      title: 'StructureComponent', // 'localizationResource.common.dashboard.keyNumbers.shortLabel',
       isOpenedHeader: true,
       columnSize: 12,
       minContentHeight: 'content-minimum-medium',

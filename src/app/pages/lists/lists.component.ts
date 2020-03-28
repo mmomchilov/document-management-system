@@ -7,27 +7,27 @@ import { FormBuilder } from '@angular/forms';
 // import { GlobalState } from '../../global.state';
 // import { AppState } from '../../app.service';
 import { ValidationComponent } from '../common/components/common/validation';
-import { StructureConfig } from './cardsConfig/structureCard';
+import { ListsConfig } from './cardsConfig/listsCard';
 import { CardConfiguration } from '../../theme/components/cardDetail/configurationClasses/cardConfiguration';
 import { Subscription } from 'rxjs';
 // import { PartnerInfoService } from 'app/theme/services/partnerInfo';
-import { UtilCharts } from './cardsConfig/utilCharts';
+import { UtilCharts } from '../pagesUtils/utilCharts';
 
 @Component({
-  selector: 'structure',
-  templateUrl: './structure.component.html',
-  styleUrls: ['./structure.component.scss']
+  selector: 'lists',
+  templateUrl: './lists.component.html',
+  styleUrls: ['./lists.component.scss']
 })
-export class StructureComponent extends ValidationComponent implements OnInit, DoCheck, OnDestroy {
+export class ListsComponent extends ValidationComponent implements OnInit, DoCheck, OnDestroy {
   database = 'database'; // agreement
-  collectionId = 'cards'; // 
+  collectionId = 'cards'; //
   collection = {};
   juridicalEntity: any;
   private juridicalCache: any = [];
   title: any = '';
-  private navTitle: string = '';
-  private navTitleLabel: string = undefined;
-  private navTitleEntityCode: string = undefined;
+  // private navTitle: string = '';
+  // private navTitleLabel: string = undefined;
+  // private navTitleEntityCode: string = undefined;
   private subscription: Subscription;
   configs: CardConfiguration[] = [];
   buttons: any;
@@ -126,7 +126,7 @@ export class StructureComponent extends ValidationComponent implements OnInit, D
   }
 
   private getTitle(entityCode: string): string {
-    const titleOnly: string = `localizationResource.common.structure.shortLabel`;
+    const titleOnly: string = `localizationResource.common.lists.shortLabel`;
     return titleOnly;
   }
 
@@ -289,7 +289,7 @@ export class StructureComponent extends ValidationComponent implements OnInit, D
 
 
     this.configs =
-      [StructureConfig.generateCard(results, {}, this.selectedTab, this.translate)];
+      [ListsConfig.generateCard(results, {}, this.selectedTab, this.translate)];
     // console.log('this.configs', this.configs);
 
   }

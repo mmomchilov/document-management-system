@@ -1,12 +1,12 @@
 import { Routes, RouterModule } from '@angular/router';
 
-import { StructureComponent } from './structure.component';
+import { ListsComponent } from './lists.component';
 import { ModuleWithProviders } from '@angular/core';
 
 export const routes: Routes = [
   {
     path: '',
-    component: StructureComponent,
+    component: ListsComponent,
     children: []
   }
 ];

@@ -13,17 +13,18 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { GlobalState } from './global.state';
-import { Structure } from './pages/structure';
+import { StructureComponent } from './pages/structure';
+import { ListsComponent } from './pages/lists';
 
 const appRoutes: Routes = [
 
 
   { path: 'pages/documents', component: DocumentsComponent },
-  { path: 'pages/structure', component: Structure },
-  // { path: 'pages/structure', component: Structure },
-  // { path: 'pages/structure', component: Structure },
-  // { path: 'pages/structure', component: Structure },
-  // { path: 'pages/structure', component: Structure },
+  { path: 'pages/structure', component: StructureComponent },
+  // { path: 'pages/structure', component: StructureComponent },
+  { path: 'pages/lists', component: ListsComponent },
+  // { path: 'pages/structure', component: StructureComponent },
+  // { path: 'pages/structure', component: StructureComponent },
 
   { path: '', redirectTo: 'pages/documents', pathMatch: 'full' },
   { path: '**', component: DocumentsComponent }
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     DocumentsComponent,
-    Structure,
+    StructureComponent,
+    ListsComponent,
     AppComponent
   ],
   imports: [

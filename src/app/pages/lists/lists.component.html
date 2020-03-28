@@ -1,0 +1,23 @@
+<!-- <sub-header 
+    [withEntityOnly]="true"   
+    [juridicals]="riskCarrierOptions"
+    [withYear]="true" 
+    [buttons]="buttons" 
+    [title]="title" 
+    (goback)="goBack()">
+</sub-header> -->
+ <!--               <pre>configs:  {{settings|json}}</pre> 
+
+ configs:  {{configs|json}}-->
+
+
+ <ba-sidebar></ba-sidebar>
+<gen-card-container
+    [displayMode]="'u'" 
+    [configs]="configs" 
+    [parentForm]="formGroup" 
+    [database]="database"
+    [collectionId]="collectionId" 
+    [collection]="collection"
+    (tabsChange)=tabsChange($event)>
+</gen-card-container>

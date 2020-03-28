@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgaModule } from '../../theme/nga.module';
-import { routing } from './structure.routes';
+import { routing } from './lists.routes';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { StructureComponent } from './structure.component';
+import { ListsComponent } from './lists.component';
 // import { PartnerInfoService } from '../../theme/services/partnerInfo';
 
 @NgModule({
@@ -23,11 +23,11 @@ import { StructureComponent } from './structure.component';
     BsDropdownModule.forRoot()
   ],
   declarations: [
-    StructureComponent
+    ListsComponent
   ],
   entryComponents: [],
   providers: []
   // providers: [PartnerInfoService]
 })
 
-export class StructureModule { }
+export class ListsModule { }
