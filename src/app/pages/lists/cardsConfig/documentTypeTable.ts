@@ -3,6 +3,7 @@ import { FieldEditorComponent } from './collections/tableRenders/fieldEditor';
 import { FieldRenderComponent } from './collections/tableRenders/fieldRender';
 import { MappingRenderComponent } from './collections/tableRenders/mappingRender';
 import { MappingEditorComponent } from './collections/tableRenders/mappingEditor';
+import { DeployButtonRenderComponent } from './collections/tableRenders/deployButtonRender';
 
 export class DocumentTypeTable {
 
@@ -23,29 +24,34 @@ export class DocumentTypeTable {
                 title: UtilCharts.translatedDocumentTypeTable[2],
                 //  type: 'checkbox', // ?? renderer???
                 width: '10%',
-                // title: 'lllllllllllllll',
                 type: 'custom',
+                //  renderComponent: DeployButtonRenderComponent // working!!!!S
+
+
+
+                // title: 'lllllllllllllll',
+                // type: 'custom',
                 renderComponent: MappingRenderComponent,
-                editor: {
-                    type: 'custom',
-                    config: {
-                       // dataGroupLst: ['dataGroupLstOptions'],
-                        fields: [ [
-                            {
-                              filter: 'newFamilyMemberSelector',
-                              type: 'checkbox',
-                              field: 'changeEnum',
-                              // hideLabel: true,
-                              optionsName: 'changeEnum',
-                              // enum: 'delegateactvtycode',
-                              enum: 'changeEnum', // not implemented really
-                              splitSize: 12,
-                              columnSize: 12
-                            }]],
-                      //  calculatedLst: calculatedMappingLst
-                    },
-                    component: MappingEditorComponent
-                }
+                // editor: {
+                //     type: 'custom',
+                //     config: {
+                //        // dataGroupLst: ['dataGroupLstOptions'],
+                //         fields: [ [
+                //             {
+                //               filter: 'newFamilyMemberSelector',
+                //               type: 'checkbox',
+                //               field: 'changeEnum',
+                //               // hideLabel: true,
+                //               optionsName: 'changeEnum',
+                //               // enum: 'delegateactvtycode',
+                //               enum: 'changeEnum', // not implemented really
+                //               splitSize: 12,
+                //               columnSize: 12
+                //             }]],
+                //       //  calculatedLst: calculatedMappingLst
+                //     },
+                //     component: MappingEditorComponent
+                // }
                 //  type: 'html',
                 // valuePrepareFunction: (value) => {
                 //     return `<label class="checkbox-inline custom-checkbox nowrap">
@@ -78,45 +84,54 @@ export class DocumentTypeTable {
             {
                 shortType: 'Ger',
                 descriptionType: 'german',
-                enable: true,
+                enable: {
+                    type: 'calculated',
+                    value: {
+                        code: 'ne]o si',
+                        type: 'calculated'
+                    },
+                    //               field: 'changeEnum'
+
+
+                },
                 whoModified: 'someone',
                 whenModified: '1/1/2020',
-            },
-            {
-                shortType: 'En',
-                descriptionType: 'english',
-                enable: true,
-                whoModified: 'someone',
-                whenModified: '1/1/2020',
-            },
-            {
-                shortType: 'Fr',
-                descriptionType: 'french',
-                enable: true,
-                whoModified: 'Capital',
-                whenModified: '1/1/2020',
-            },
-            {
-                shortType: 'Bul',
-                descriptionType: 'Bulgarian',
-                enable: true,
-                whoModified: 'someone',
-                whenModified: '1/1/2020',
-            },
-            {
-                shortType: 'It',
-                descriptionType: 'Italian',
-                enable: true,
-                whoModified: 'someone',
-                whenModified: '1/1/2020',
-            },
-            {
-                shortType: 'Multi',
-                descriptionType: 'Multilingual',
-                enable: true,
-                whoModified: 'someone',
-                whenModified: '1/1/2020',
-            },
+            }
+            // {
+            //     shortType: 'En',
+            //     descriptionType: 'english',
+            //     enable: true,
+            //     whoModified: 'someone',
+            //     whenModified: '1/1/2020',
+            // },
+            // {
+            //     shortType: 'Fr',
+            //     descriptionType: 'french',
+            //     enable: true,
+            //     whoModified: 'Capital',
+            //     whenModified: '1/1/2020',
+            // },
+            // {
+            //     shortType: 'Bul',
+            //     descriptionType: 'Bulgarian',
+            //     enable: true,
+            //     whoModified: 'someone',
+            //     whenModified: '1/1/2020',
+            // },
+            // {
+            //     shortType: 'It',
+            //     descriptionType: 'Italian',
+            //     enable: true,
+            //     whoModified: 'someone',
+            //     whenModified: '1/1/2020',
+            // },
+            // {
+            //     shortType: 'Multi',
+            //     descriptionType: 'Multilingual',
+            //     enable: true,
+            //     whoModified: 'someone',
+            //     whenModified: '1/1/2020',
+            // },
 
         ];
     }

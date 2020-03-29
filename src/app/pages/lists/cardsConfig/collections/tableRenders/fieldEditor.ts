@@ -19,16 +19,16 @@ export class FieldEditorComponent extends DefaultEditor implements AfterViewInit
     }
 
     ngAfterViewInit() {
-        //  if (this.cell.newValue !== '') {
-        const fieldObj = this.cell.getValue();
-        console.log('fieldObj', fieldObj);
-        const display = fieldObj.display;
-        let code = display || fieldObj.property;
-        if (fieldObj.mandatory) {
-            code = `${code} *`;
+        if (this.cell.newValue !== '') {
+            const fieldObj = this.cell.getValue();
+            console.log('fieldObj', fieldObj);
+            const display = fieldObj.display;
+            let code = display || fieldObj.property;
+            if (fieldObj.mandatory) {
+                code = `${code} *`;
+            }
+            this.renderValue = code;
         }
-        this.renderValue = code;
-        //  }
     }
 
 }

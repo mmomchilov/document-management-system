@@ -18,10 +18,14 @@ export class MappingRenderComponent implements ViewCell, OnInit {
     @Input() rowData: any;
 
     ngOnInit() {
+        console.log('rowData', this.rowData);
+        console.log('value', this.value);
         const mappingValue = this.value.value;
+        console.log('mappingValue', mappingValue);
         let mappingLabel = '';
         if (mappingValue) {
             const type = this.value.type;
+            console.log('type', type);
             switch (type) {
                 case 'calculated':
                     mappingLabel = mappingValue.code;
@@ -35,6 +39,8 @@ export class MappingRenderComponent implements ViewCell, OnInit {
                     break;
             }
         }
+
+        console.log('mappingLabel', mappingLabel);
         this.renderValue = mappingLabel;
     }
 }
