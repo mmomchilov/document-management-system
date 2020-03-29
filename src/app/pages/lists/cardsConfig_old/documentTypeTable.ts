@@ -1,9 +1,6 @@
 import { UtilCharts } from '../../pagesUtils/utilCharts';
-import { FieldEditorComponent } from './collections/tableRenders/fieldEditor';
-import { FieldRenderComponent } from './collections/tableRenders/fieldRender';
-import { MappingRenderComponent } from './collections/tableRenders/mappingRender';
-import { MappingEditorComponent } from './collections/tableRenders/mappingEditor';
-
+import { FieldRenderComponent } from '../../cardsConfig/collections/tableRenders/fieldRender';
+import { FieldEditorComponent } from '../../cardsConfig/collections/tableRenders/fieldEditor';
 export class DocumentTypeTable {
 
     static generateColumns(translateService): any {
@@ -25,27 +22,11 @@ export class DocumentTypeTable {
                 width: '10%',
                 // title: 'lllllllllllllll',
                 type: 'custom',
-                renderComponent: MappingRenderComponent,
-                editor: {
-                    type: 'custom',
-                    config: {
-                       // dataGroupLst: ['dataGroupLstOptions'],
-                        fields: [ [
-                            {
-                              filter: 'newFamilyMemberSelector',
-                              type: 'checkbox',
-                              field: 'changeEnum',
-                              // hideLabel: true,
-                              optionsName: 'changeEnum',
-                              // enum: 'delegateactvtycode',
-                              enum: 'changeEnum', // not implemented really
-                              splitSize: 12,
-                              columnSize: 12
-                            }]],
-                      //  calculatedLst: calculatedMappingLst
-                    },
-                    component: MappingEditorComponent
-                }
+                renderComponent: FieldRenderComponent,
+                // editor: {
+                //     type: 'custom',
+                //     component: FieldEditorComponent
+                // }
                 //  type: 'html',
                 // valuePrepareFunction: (value) => {
                 //     return `<label class="checkbox-inline custom-checkbox nowrap">

@@ -12,11 +12,13 @@ import { CardConfiguration } from '../../theme/components/cardDetail/configurati
 import { Subscription } from 'rxjs';
 // import { PartnerInfoService } from 'app/theme/services/partnerInfo';
 import { UtilCharts } from '../pagesUtils/utilCharts';
+import { FieldRenderComponent } from './cardsConfig/collections/tableRenders/fieldRender';
 
 @Component({
   selector: 'lists',
   templateUrl: './lists.component.html',
-  styleUrls: ['./lists.component.scss']
+  styleUrls: ['./lists.component.scss'],
+  providers: [FieldRenderComponent] // !!!!!!!!!!!!!! fixed
 })
 export class ListsComponent extends ValidationComponent implements OnInit, DoCheck, OnDestroy {
   database = 'database'; // agreement
@@ -42,6 +44,7 @@ export class ListsComponent extends ValidationComponent implements OnInit, DoChe
   subscribed = {};
 
   constructor(// private routing: RoutingService,
+    protected fieldRenderComponent: FieldRenderComponent,
     private router: Router, protected translate: TranslateService,
     private fb: FormBuilder, private ref: ChangeDetectorRef,
     // public detailService: CollectionDetailsService, private baMenuService: BaMenuService,
@@ -264,7 +267,7 @@ export class ListsComponent extends ValidationComponent implements OnInit, DoChe
       //             break;
     }
     //       }
-    console.log('results!', results);
+    // console.log('results!', results);
     //       this.configs =
     //         [MonitoringIndicatorsConfig.generateCard(results, optionalParams, this.selectedTab, this.translate)];
     //       console.log('this.configs', this.configs);
@@ -289,7 +292,7 @@ export class ListsComponent extends ValidationComponent implements OnInit, DoChe
 
 
     this.configs =
-      [ListsConfig.generateCard(results, {}, this.selectedTab, this.translate)];
+      [ListsConfig.generateCard(results, {}, this.selectedTab, this.translate, this.fieldRenderComponent)];
     // console.log('this.configs', this.configs);
 
   }

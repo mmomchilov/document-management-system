@@ -8,10 +8,11 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ListsComponent } from './lists.component';
-// import { PartnerInfoService } from '../../theme/services/partnerInfo';
+import { CustomRenderModule } from './cardsConfig/collections/tableRenders/customRender.module';
 
 @NgModule({
   imports: [
+    CustomRenderModule,
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
@@ -25,7 +26,7 @@ import { ListsComponent } from './lists.component';
   declarations: [
     ListsComponent
   ],
-  entryComponents: [],
+ // entryComponents: [CustomRenderModule],
   providers: []
   // providers: [PartnerInfoService]
 })

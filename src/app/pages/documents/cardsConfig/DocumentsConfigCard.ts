@@ -32,45 +32,6 @@ export class DocumentsConfig {
         // fields in tabs
         fields: [
 
-          // [{
-          //   field: 'ediLst',
-          //   // path: `${this.category}.`,
-          //   type: 'comment',
-          //   columnSize: 12,
-          //   // disabledDisplayModes: 'cur',
-          //   filter: 'newFamilyMemberSelector'
-          // }],
-
-
-
-          // [
-          // {
-          //   filter: 'newFamilyMemberSelector',
-          //   field: 'subBusinessContext',
-          //   labelCode: 'businessContext',
-          //   type: 'select',
-          //   enum: 'changeEnum',
-          //   validators: {
-          //     isRequired: false
-          //   },
-          //   // storeData: ((collection, newValue) => {
-          //   //     const context = StorageConfig.getBusinessContext(newValue);
-          //   //     collection.businessContext = context.businessContext;
-          //   //     collection.subBusinessContext = context.subBusinessContext;
-          //   // }),
-          //   columnSize: 6
-          // },
-          // {
-          //   filter: 'newFamilyMemberSelector',
-          //   field: 'code',
-          //   type: 'input',
-          //   disabledDisplayModes: 'r',
-          //   validators: {
-          //     isRequired: true
-          //   },
-          //   // onFocusOut: ExtractData.transformCode(),
-          //   columnSize: 4
-          // }],
           [
             {
               filter: 'newFamilyMemberSelector',
@@ -233,7 +194,7 @@ export class DocumentsConfig {
             //   enumTransformation: this.sortEnumeration,
             columnSize: 2
           },
-           {
+          {
             filter: 'newFamilyMemberSelector',
             field: 'project',
             // path: ctgryFieldPath,
@@ -242,7 +203,7 @@ export class DocumentsConfig {
             enum: 'currency',
             //   enumTransformation: this.sortEnumeration,
             columnSize: 2
-          }, 
+          },
           {
             filter: 'newFamilyMemberSelector',
             field: 'subSystem',
@@ -323,11 +284,11 @@ export class DocumentsConfig {
   }
 
   private static getTabsList(result): TabConfiguration[] {
-    console.log(UtilCharts.translatedTitleLabels);
+    // console.log(UtilCharts.translatedTitleLabels);
     return [
       {
         field: 'documentTab',
-        filterName: 'documentsSelector', 
+        filterName: 'documentsSelector',
         // label: `${UtilCharts.translatedTitleLabels['financialFlowsTab'][0]} ${result.currentYearOption}`
         label: `This Document`
         // 'localizationResource.referential.financialFlows.shortLabel'

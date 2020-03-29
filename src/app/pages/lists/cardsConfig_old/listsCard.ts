@@ -11,7 +11,7 @@ import { DocumentStatusTable } from './documentStatusTable';
 
 export class ListsConfig {
 
-    static generateCard(result, optionalParams, selectedTab, translate, fieldRenderComponent): any {
+    static generateCard(result, optionalParams, selectedTab, translate): any {
         // const me = UtilCharts.translatedTitleLabels['healthTable1'];
         // console.log('me', me);
 
@@ -34,7 +34,7 @@ export class ListsConfig {
                                 columns: DocumentTypeTable.generateColumns(translate)
 
                             },
-                            items: DocumentTypeTable.mockData()
+                             items:  DocumentTypeTable.mockData()
                         },
                         {
                             type: 'editableTable',
@@ -45,7 +45,7 @@ export class ListsConfig {
                                 hideSubHeader: true,
                                 columns: DocumentStatusTable.generateColumns(translate)
                             },
-                            items: DocumentStatusTable.mockData()
+                             items: DocumentStatusTable.mockData()
                         }
                         ,
 

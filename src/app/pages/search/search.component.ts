@@ -172,7 +172,7 @@ export class SearchComponent implements OnInit {
                   error => this.errorMessage = <any>error
                 );
             } else {
-              console.log('No found Juridical-entity');
+            //  console.log('No found Juridical-entity');
               this.router.navigate(['pages/agreements', agreementBuid]);
             }
           },

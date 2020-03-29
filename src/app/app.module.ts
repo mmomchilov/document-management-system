@@ -15,6 +15,7 @@ import { DocumentsComponent } from './pages/documents/documents.component';
 import { GlobalState } from './global.state';
 import { StructureComponent } from './pages/structure';
 import { ListsComponent } from './pages/lists';
+import { CustomRenderModule } from './pages/lists/cardsConfig/collections/tableRenders/customRender.module';
 
 const appRoutes: Routes = [
 
@@ -33,12 +34,14 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
+
     DocumentsComponent,
     StructureComponent,
     ListsComponent,
     AppComponent
   ],
   imports: [
+    CustomRenderModule,
     HttpClientModule,
     NgaModule.forRoot(),
     BrowserModule,
@@ -54,6 +57,7 @@ const appRoutes: Routes = [
     }),
   ],
   providers: [GlobalState],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] // ,
+  // exports: [ CustomRenderModule ]
 })
 export class AppModule { }

@@ -99,7 +99,7 @@ export class AppComponent implements OnDestroy {
   }
 
   private reloadCache(type: string, spin: boolean = true) {
-    console.log('reloadCache for ' + type);
+   // console.log('reloadCache for ' + type);
     if (spin) {
       // this._spinner.show();
     }

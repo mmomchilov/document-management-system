@@ -116,7 +116,7 @@ export class ContentContainerComponent implements OnInit, OnChanges {
     return '';
   }
 
-  
+
   emitContentEvent(event) {
     if (event && event.onChangeValue) {
       event.onChangeValue
@@ -206,6 +206,7 @@ export class ContentContainerComponent implements OnInit, OnChanges {
   }
 
   onCustomAction(event, config) {
+    console.log('event', event);
     this.handleTableAction('custom', event);
   }
 

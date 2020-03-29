@@ -13,7 +13,7 @@ export class DateUtils {
   public static getCurrentDate(): string {
     let now = new Date();
     console.log('++++++++++++++++++++++ getCurrentDate');
-    console.log(new DatePipe('fr-FR'));
+   // console.log(new DatePipe('fr-FR'));
     let today = DateUtils.pad(now.getFullYear(), 4) + '-' + (DateUtils.pad(now.getMonth() + 1)) + '-' + DateUtils.pad(now.getDate());
     return today;
   }

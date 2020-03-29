@@ -100,7 +100,7 @@ export class StructureComponent extends ValidationComponent implements OnInit, D
     UtilCharts.translateHealthTable1Columns(this.translate);
     UtilCharts.translateRPTable1Columns(this.translate);
     this.setFormGroup(this.fb.group({}));
-    console.log('formGroup formGroup formGroup', this.formGroup);
+   // console.log('formGroup formGroup formGroup', this.formGroup);
     // this.riskCarrierOptions = this.routing.data.riskCarrierOptions;
     this.setCardsConfig();
     // } else { this.router.navigate(['pages/partner']); }
@@ -264,7 +264,7 @@ export class StructureComponent extends ValidationComponent implements OnInit, D
       //             break;
     }
     //       }
-    console.log('results!', results);
+   // console.log('results!', results);
     //       this.configs =
     //         [MonitoringIndicatorsConfig.generateCard(results, optionalParams, this.selectedTab, this.translate)];
     //       console.log('this.configs', this.configs);

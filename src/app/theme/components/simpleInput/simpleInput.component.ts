@@ -165,7 +165,7 @@ export class SimpleInputComponent extends ValidationComponent implements OnInit,
   }
 
   onChangeValue(config: any, event: any) {
-    console.log('event', event); 
+   // console.log('event', event); 
     const newValue = this.getNewValue(event, config);
     this.storeData(config, newValue);
     this.updateControlValue(config, newValue);
@@ -216,7 +216,7 @@ export class SimpleInputComponent extends ValidationComponent implements OnInit,
         this.formGroup.updateValueAndValidity();
       }
     }
-    console.log('result', result);
+  //  console.log('result', result);
     return result;
   }
 

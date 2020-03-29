@@ -103,7 +103,7 @@ export class MessageConfigurationService {
 	}
 
 	generateMessageTechnicalFile(messageApplicationBuid: string) {
-		console.log('messageApplicationBuid: ', messageApplicationBuid);
+	//	console.log('messageApplicationBuid: ', messageApplicationBuid);
 		const getUrl = '/collections/messageapplication/deploy';
 		const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 		const options = { headers: headers };

@@ -82,7 +82,7 @@ export class MongoServerDataSource extends LocalDataSource {
   }
 
   setColumnsListTofilter(columnsListTofilter: any[]) {
-    console.log('columnsListTofilter: ', columnsListTofilter);
+  //  console.log('columnsListTofilter: ', columnsListTofilter);
     this.columnsListTofilter = columnsListTofilter;
   }
 
