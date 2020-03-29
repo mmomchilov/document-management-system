@@ -9,6 +9,9 @@ import { ConcatenationEditorComponent } from '../../concatenationEditor';
 import { ConcatenationRenderComponent } from '../../concatenationRender';
 import { CustomEditorComponent } from './customEditor';
 import { DeployButtonRenderComponent } from './deployButtonRender';
+import { CustomCheckboxRenderComponent } from './customCheckboxRender.component';
+import { CustomCheckboxEditorComponent } from './customCheckboxEditor.component';
+import { CustomInputEditorComponent } from './customInputEditor.component';
 
 @NgModule({
     imports: [
@@ -16,6 +19,9 @@ import { DeployButtonRenderComponent } from './deployButtonRender';
         CommonModule
     ],
     declarations: [
+        CustomCheckboxRenderComponent,
+        CustomCheckboxEditorComponent,
+        CustomInputEditorComponent,
         FieldRenderComponent,
         FieldEditorComponent,
         MappingRenderComponent,
@@ -26,6 +32,9 @@ import { DeployButtonRenderComponent } from './deployButtonRender';
         DeployButtonRenderComponent
     ],
     entryComponents: [
+        CustomCheckboxRenderComponent,
+        CustomCheckboxEditorComponent,
+        CustomInputEditorComponent,
         FieldRenderComponent,
         FieldEditorComponent,
         MappingRenderComponent,

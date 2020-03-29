@@ -4,6 +4,8 @@ import { FieldRenderComponent } from './collections/tableRenders/fieldRender';
 import { MappingRenderComponent } from './collections/tableRenders/mappingRender';
 import { MappingEditorComponent } from './collections/tableRenders/mappingEditor';
 import { DeployButtonRenderComponent } from './collections/tableRenders/deployButtonRender';
+import { CustomCheckboxRenderComponent } from './collections/tableRenders/customCheckboxRender.component';
+import { CustomCheckboxEditorComponent } from './collections/tableRenders/customCheckboxEditor.component';
 
 export class DocumentTypeTable {
 
@@ -20,50 +22,30 @@ export class DocumentTypeTable {
                 title: UtilCharts.translatedDocumentTypeTable[1],
                 width: '65%'
             },
-            enable: {
+            enableColumn: {
                 title: UtilCharts.translatedDocumentTypeTable[2],
                 //  type: 'checkbox', // ?? renderer???
                 width: '10%',
                 type: 'custom',
-                //  renderComponent: DeployButtonRenderComponent // working!!!!S
 
+                renderComponent: CustomCheckboxRenderComponent,
+                editor: {
+                    type: 'custom',
+                    component: CustomCheckboxEditorComponent
+                }
 
-
-                // title: 'lllllllllllllll',
-                // type: 'custom',
-                renderComponent: MappingRenderComponent,
+                // renderComponent: MappingRenderComponent,
                 // editor: {
                 //     type: 'custom',
                 //     config: {
-                //        // dataGroupLst: ['dataGroupLstOptions'],
-                //         fields: [ [
-                //             {
-                //               filter: 'newFamilyMemberSelector',
-                //               type: 'checkbox',
-                //               field: 'changeEnum',
-                //               // hideLabel: true,
-                //               optionsName: 'changeEnum',
-                //               // enum: 'delegateactvtycode',
-                //               enum: 'changeEnum', // not implemented really
-                //               splitSize: 12,
-                //               columnSize: 12
-                //             }]],
-                //       //  calculatedLst: calculatedMappingLst
+                //         dataGroupLst: null, // dataGroupLstOptions,
+                //         fields: null, // fieldsConfig,
+                //         calculatedLst: null// calculatedMappingLst
                 //     },
                 //     component: MappingEditorComponent
                 // }
-                //  type: 'html',
-                // valuePrepareFunction: (value) => {
-                //     return `<label class="checkbox-inline custom-checkbox nowrap">
-                //     <input type="checkbox"
-                //            name="{{config.field}}"
-                //            id="{{parentId+config.field}}"
-                //            value="{{value}}"
-                //            [checked]=true
-                //           />
-                //     <span></span>
-                //   </label>`;
-                // },
+                //  renderComponent: DeployButtonRenderComponent // working!!!!S
+
             },
             whoModified: {
                 // title: 'localizationResource.referential.dashboard.clmFldrNbr.shortLabel',
@@ -84,26 +66,17 @@ export class DocumentTypeTable {
             {
                 shortType: 'Ger',
                 descriptionType: 'german',
-                enable: {
-                    type: 'calculated',
-                    value: {
-                        code: 'ne]o si',
-                        type: 'calculated'
-                    },
-                    //               field: 'changeEnum'
-
-
-                },
+                enableColumn: true,
                 whoModified: 'someone',
                 whenModified: '1/1/2020',
-            }
-            // {
-            //     shortType: 'En',
-            //     descriptionType: 'english',
-            //     enable: true,
-            //     whoModified: 'someone',
-            //     whenModified: '1/1/2020',
-            // },
+            },
+            {
+                shortType: 'En',
+                descriptionType: 'english',
+                enableColumn: false,
+                whoModified: 'someone',
+                whenModified: '1/1/2020',
+            },
             // {
             //     shortType: 'Fr',
             //     descriptionType: 'french',

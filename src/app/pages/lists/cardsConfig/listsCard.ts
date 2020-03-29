@@ -32,7 +32,6 @@ export class ListsConfig {
                                 actions: { edit: false, delete: false, add: false },
                                 hideSubHeader: true,
                                 columns: DocumentTypeTable.generateColumns(translate)
-
                             },
                             items: DocumentTypeTable.mockData()
                         },
@@ -46,9 +45,7 @@ export class ListsConfig {
                                 columns: DocumentStatusTable.generateColumns(translate)
                             },
                             items: DocumentStatusTable.mockData()
-                        }
-                        ,
-
+                        },
                         {
                             type: 'editableTable',
                             columnSize: 4,
