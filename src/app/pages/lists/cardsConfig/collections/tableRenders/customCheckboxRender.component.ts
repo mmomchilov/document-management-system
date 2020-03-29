@@ -22,7 +22,13 @@ export class CustomCheckboxRenderComponent implements ViewCell, OnInit {
   @Output() change: EventEmitter<any> = new EventEmitter();
 
   ngOnInit() {
+
+    // may be add enable/disable in value
+
     this.renderValue = this.value;
+
+
+    // [disabled]="false"
     console.log('this.value', this.value);
     console.log('rowData', this.rowData);
   }

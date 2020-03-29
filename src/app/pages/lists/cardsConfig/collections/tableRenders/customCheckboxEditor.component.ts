@@ -27,6 +27,7 @@ export class CustomCheckboxEditorComponent extends DefaultEditor implements Afte
     }
 
     onChangeValue(event) {
+        console.log('event!!!!!!!!!!!!!!!!!!', event);
       this.cell.newValue = event;
     }
 
