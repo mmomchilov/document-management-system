@@ -19,12 +19,22 @@ export class FiltersDocumentConfig {
           [
             {
               field: 'filtersLabel',
+              hideLabel: true,
               type: 'label',
               label: 'Filters',
               columnSize: 1
             },
+
+            // {
+            //   field: 'numberLabel',
+            //   hideLabel: false,
+            //   type: 'label',
+            //   label: 'number',
+            //   columnSize: 1
+            // },
             {
               field: 'number',
+              hideLabel: false,
               type: 'select',
               enum: 'currency',
               columnSize: 1
@@ -32,6 +42,7 @@ export class FiltersDocumentConfig {
             {
 
               field: 'year',
+              hideLabel: false,
               // path: ctgryFieldPath,
               //  labelPath: ctgryLabelPath,
               type: 'select',
@@ -42,6 +53,7 @@ export class FiltersDocumentConfig {
             {
 
               field: 'title',
+              hideLabel: false,
               // path: ctgryFieldPath,
               //  labelPath: ctgryLabelPath,
               type: 'select',
@@ -52,6 +64,7 @@ export class FiltersDocumentConfig {
             {
 
               field: 'customer',
+              hideLabel: false,
               // path: ctgryFieldPath,
               //  labelPath: ctgryLabelPath,
               type: 'select',
@@ -62,6 +75,7 @@ export class FiltersDocumentConfig {
             {
 
               field: 'subsystem',
+              hideLabel: false,
               // path: ctgryFieldPath,
               //  labelPath: ctgryLabelPath,
               type: 'select',
@@ -85,6 +99,7 @@ export class FiltersDocumentConfig {
             {
 
               field: 'class',
+              hideLabel: false,
               // path: ctgryFieldPath,
               //  labelPath: ctgryLabelPath,
               type: 'select',
@@ -95,6 +110,7 @@ export class FiltersDocumentConfig {
             {
 
               field: 'intCust',
+              hideLabel: false,
               // path: ctgryFieldPath,
               labelPath: 'ctgryLabelPath',
               type: 'select',
@@ -105,6 +121,7 @@ export class FiltersDocumentConfig {
             {
 
               field: 'hasFiles',
+              hideLabel: false,
               // path: ctgryFieldPath,
               //  labelPath: ctgryLabelPath,
               type: 'select',
@@ -115,6 +132,7 @@ export class FiltersDocumentConfig {
             {
 
               field: 'project',
+              hideLabel: false,
               // path: ctgryFieldPath,
               //  labelPath: ctgryLabelPath,
               type: 'select',
