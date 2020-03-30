@@ -1,9 +1,9 @@
 
 // import { TabConfiguration } from 'app/theme/components/cardDetail/configurationClasses/tabConfigurationts';
 
-import { RiskAndProtectTable1 } from './riskAndProtectTable1';
+import { CurRevDocsTable } from './curRevDocsTable';
 
-import { HealthTable1 } from './healthTable1';
+import { DetailCurRevDocsTable } from './detailCurRevDocsTable';
 // import { UtilCharts } from './utilCharts';
 import { UtilCharts } from 'src/app/pages/pagesUtils';
 import { TabConfiguration } from 'src/app/theme/components/cardDetail/configurationClasses/tabConfigurationts';
@@ -247,7 +247,7 @@ export class DocumentsConfig {
               ,
               // 'localizationResource.referential.dashboard.processedData.shortLabel',
               hideSubHeader: true,
-              columns: HealthTable1.chart(translate),
+              columns: DetailCurRevDocsTable.genColumns(translate),
               rowClassFunction: (row) => {
                 return this.getBoundariesColorClass(row, optionalParams);
               }
@@ -260,7 +260,7 @@ export class DocumentsConfig {
             filter: 'newFamilyMemberSelector',
             columnSize: 12,
             settings: {
-              tableTitle: 'THIRD tab Table title'
+              tableTitle: 'Current revision of documents'
               // tableTitle: `${UtilCharts.translatedTitleLabels
               // ['riskAndProtectTable1'][0]} ${UtilCharts.translatedTitleLabels
               // ['riskAndProtectTable1'][1]} ${result.currentYearOption} ${
@@ -269,10 +269,25 @@ export class DocumentsConfig {
               //   }`
               ,
               hideSubHeader: true,
-              columns: RiskAndProtectTable1.chart(translate)
+              columns: CurRevDocsTable.genColumns(translate)
             },
             items: result.RiskAndProtectTable1
-          }]
+          }],
+          [{
+            filter: 'newFamilyMemberSelector',
+            type: 'editableTable',
+            columnSize: 12,
+            settings: {
+              tableTitle: 'Detail versions of current doc ',
+              hideSubHeader: true,
+              columns: DetailCurRevDocsTable.genColumns(translate),
+              rowClassFunction: (row) => {
+                return this.getBoundariesColorClass(row, optionalParams);
+              }
+            },
+            items: result.healthitems
+          }],
+
         ]
       }
     };

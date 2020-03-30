@@ -1,7 +1,7 @@
 import { UtilCharts } from './utilCharts';
-export class RiskAndProtectTable1 {
+export class CurRevDocsTable {
 
-    static chart(translateService): any {
+    static genColumns(translateService): any {
         return {
             riskFamily: {
                 //  title: 'localizationResource.referential.dashboard.riskFamily.shortLabel',
@@ -11,9 +11,7 @@ export class RiskAndProtectTable1 {
                 // compareFunction: (direction: any, a: any, b: any) => UtilCharts.compareTranslatedValuesRP(
                 //     direction, a, b, translateService, 'localizationEnumValue.portfolio.typerisk'),
                 valuePrepareFunction: (value) => {
-                    return `<div class="left">
-                    ${value} 
-                    </div>`;
+                    return `<div class="left"> ${value} </div>`;
                 }
                 //   ${UtilCharts.translateLabel('typerisk', value, translateService)} 
             },
@@ -23,9 +21,7 @@ export class RiskAndProtectTable1 {
                 width: '10%',
                 type: 'html',
                 valuePrepareFunction: (value) => {
-                    return `<div class="left"> 
-                    ${value} 
-                    </div>`;
+                    return `<div class="left"> ${value} </div>`;
                 }
             },
             clmFldrNbr1: {
@@ -47,7 +43,6 @@ export class RiskAndProtectTable1 {
                     return `<div class="right">${formattedVal}</div>`;
                 }
             },
-
             opndClmFldrNbr: {
                 // title: 'localizationResource.referential.dashboard.opndClmFldrNbr.shortLabel',
                 title: UtilCharts.translatedRPTable1Columns[3],
@@ -89,7 +84,6 @@ export class RiskAndProtectTable1 {
                     return `<div class="right">${formattedVal}</div>`;
                 }
             },
-
             beneficiaryNbr: {
                 // title: 'localizationResource.referential.dashboard.beneficiaryNbr.shortLabel',
                 title: UtilCharts.translatedRPTable1Columns[5],
@@ -110,7 +104,6 @@ export class RiskAndProtectTable1 {
                     return `<div class="right">${formattedVal}</div>`;
                 }
             },
-
             paidAmount: {
                 // title: 'localizationResource.referential.dashboard.paidAmount.shortLabel',
                 title: UtilCharts.translatedRPTable1Columns[6],
@@ -121,7 +114,6 @@ export class RiskAndProtectTable1 {
                     return `<div class="right">${formattedVal}</div>`;
                 }
             },
-
             avrgCost: {
                 // title: 'localizationResource.referential.dashboard.avrgCost.shortLabel',
                 title: UtilCharts.translatedRPTable1Columns[7],

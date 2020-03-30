@@ -1,8 +1,8 @@
 import { UtilCharts } from './utilCharts';
 
-export class HealthTable1 {
+export class DetailCurRevDocsTable {
 
-    static chart(translateService): any {
+    static genColumns(translateService): any {
         return {
             medicalreimbursementDateFamlyLabel: {
                 title: translateService.instant('localizationResource.referential.dashboard.actFamily.shortLabel'),

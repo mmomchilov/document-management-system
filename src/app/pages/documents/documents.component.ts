@@ -13,6 +13,7 @@ import { Subscription } from 'rxjs';
 // import { PartnerInfoService } from 'app/theme/services/partnerInfo';
 import { UtilCharts } from './cardsConfig/documentsConfig/utilCharts';
 import { FiltersDocumentConfig } from './cardsConfig/filtersDocument/filtersDocumentConfig';
+import { RadioSectionConfig } from './cardsConfig/radioSectionConfig/radioSectionConfig';
 
 @Component({
   selector: 'documents',
@@ -199,7 +200,7 @@ export class DocumentsComponent extends ValidationComponent implements OnInit, D
     //     response => {
     //       console.log('response', response);
     const results = {
-      'currentYearOption': this.currentYearOption
+      currentYearOption: this.currentYearOption
     };
     const optionalParams = {};
     for (const curAction of actionsResultsLst) {
@@ -291,7 +292,11 @@ export class DocumentsComponent extends ValidationComponent implements OnInit, D
 
     this.configs =
       [FiltersDocumentConfig.generateCard(results, {}, this.selectedTab, this.translate),
-      DocumentsConfig.generateCard(results, {}, this.selectedTab, this.translate)];
+      DocumentsConfig.generateCard(results, {}, this.selectedTab, this.translate),
+      RadioSectionConfig.generateCard(results, {}, this.selectedTab, this.translate)];
+
+
+
     // console.log('this.configs', this.configs);
 
   }
