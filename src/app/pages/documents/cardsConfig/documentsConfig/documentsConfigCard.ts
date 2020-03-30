@@ -3,10 +3,9 @@
 
 import { RiskAndProtectTable1 } from './riskAndProtectTable1';
 
-import { HealthChart1 } from './healthChart1';
-import { HealthChart2 } from './healthChart2';
 import { HealthTable1 } from './healthTable1';
-import { UtilCharts } from './utilCharts';
+// import { UtilCharts } from './utilCharts';
+import { UtilCharts } from 'src/app/pages/pagesUtils';
 import { TabConfiguration } from 'src/app/theme/components/cardDetail/configurationClasses/tabConfigurationts';
 
 export class DocumentsConfig {

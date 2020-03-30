@@ -7,11 +7,12 @@ import { FormBuilder } from '@angular/forms';
 // import { GlobalState } from '../../global.state';
 // import { AppState } from '../../app.service';
 import { ValidationComponent } from '../common/components/common/validation';
-import { DocumentsConfig } from './cardsConfig/documentsConfigCard';
+import { DocumentsConfig } from './cardsConfig/documentsConfig/documentsConfigCard';
 import { CardConfiguration } from '../../theme/components/cardDetail/configurationClasses/cardConfiguration';
 import { Subscription } from 'rxjs';
 // import { PartnerInfoService } from 'app/theme/services/partnerInfo';
-import { UtilCharts } from './cardsConfig/utilCharts';
+import { UtilCharts } from './cardsConfig/documentsConfig/utilCharts';
+import { FiltersDocumentConfig } from './cardsConfig/filtersDocument/filtersDocumentConfig';
 
 @Component({
   selector: 'documents',
@@ -289,7 +290,8 @@ export class DocumentsComponent extends ValidationComponent implements OnInit, D
 
 
     this.configs =
-      [DocumentsConfig.generateCard(results, {}, this.selectedTab, this.translate)];
+      [FiltersDocumentConfig.generateCard(results, {}, this.selectedTab, this.translate),
+      DocumentsConfig.generateCard(results, {}, this.selectedTab, this.translate)];
     // console.log('this.configs', this.configs);
 
   }
