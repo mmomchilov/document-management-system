@@ -1,12 +1,8 @@
 
 // import { TabConfiguration } from 'app/theme/components/cardDetail/configurationClasses/tabConfigurationts';
-import { RiskAndProtectChart1 } from './riskAndProtectChart1';
-import { RiskAndProtectChart2 } from './riskAndProtectChart2';
+
 import { RiskAndProtectTable1 } from './riskAndProtectTable1';
-import { FinancialFlowsChart1 } from './financialFlowsChart1';
-import { FinancialFlowsChart2 } from './financialFlowsChart2';
-import { FinancialFlowsChart3 } from './financialFlowsChart3';
-import { FinancialFlowsChart4 } from './financialFlowsChart4';
+
 import { HealthChart1 } from './healthChart1';
 import { HealthChart2 } from './healthChart2';
 import { HealthTable1 } from './healthTable1';
@@ -242,7 +238,7 @@ export class DocumentsConfig {
             type: 'editableTable',
             columnSize: 12,
             settings: {
-              tableTitle: 'Seccond tab table title '
+              tableTitle: 'First tab table title '
               // tableTitle: `${UtilCharts.translatedTitleLabels
               // ['healthTable1'][0]} ${UtilCharts.translatedTitleLabels
               // ['healthTable1'][1]} ${result.currentYearOption} ${
