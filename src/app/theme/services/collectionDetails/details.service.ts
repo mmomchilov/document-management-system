@@ -44,7 +44,7 @@ export class CollectionDetailsService {
 			// }
 			{
 				'rev': 'rev 1', // mocked value in input
-				'lang': 'EUR', // mocked value in select - 'EUR' is the code
+				'lang': 'en_EN', // mocked value in select - 'en_EN' is the code
 
 
 

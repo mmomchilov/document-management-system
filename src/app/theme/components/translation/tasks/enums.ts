@@ -2,6 +2,8 @@ export class Enums {
 
     static translation() {
         return {
+            'localizationEnumValue.database.language':
+                { fr_FR: { label: 'French' }, en_EN: { label: 'English' }, bg_BG: { label: 'Bulgarian' } },
 
             // common collection translations
             'localizationEnumValue.database.currency':

@@ -98,7 +98,7 @@ export class DocumentsConfig {
               // path: ctgryFieldPath,
               //  labelPath: ctgryLabelPath,
               type: 'select',
-              enum: 'currency',
+              enum: 'language',
               //   enumTransformation: this.sortEnumeration,
               columnSize: 1
             },
