@@ -14,16 +14,19 @@ import { Subscription } from 'rxjs';
 import { UtilCharts } from './cardsConfig/documentsConfig/utilCharts';
 import { FiltersDocumentConfig } from './cardsConfig/filtersDocument/filtersDocumentConfig';
 import { RadioSectionConfig } from './cardsConfig/radioSectionConfig/radioSectionConfig';
+import { CollectionDetailsService } from 'src/app/theme/services';
 
 @Component({
   selector: 'documents',
   templateUrl: './documents.component.html',
-  styleUrls: ['./documents.component.scss']
+  styleUrls: ['./documents.component.scss'],
+  providers: [CollectionDetailsService]
+
 })
 export class DocumentsComponent extends ValidationComponent implements OnInit, DoCheck, OnDestroy {
   database = 'database'; // agreement
   collectionId = 'cards'; //
-  collection = {};
+  collection = {}; // ??
   juridicalEntity: any;
   private juridicalCache: any = [];
   title: any = '';
@@ -42,13 +45,14 @@ export class DocumentsComponent extends ValidationComponent implements OnInit, D
   selectedTab = 'documentsSelector';
   riskCarrierOptions: any = [];
   subscribed = {};
+  documents;
 
   constructor(// private routing: RoutingService,
     private router: Router, protected translate: TranslateService,
     private fb: FormBuilder, private ref: ChangeDetectorRef,
     // public detailService: CollectionDetailsService, private baMenuService: BaMenuService,
     // private _appState: AppState, private _state: GlobalState, private partnerInfoService: PartnerInfoService
-  ) {
+    private collectionDetails: CollectionDetailsService) {
     super(translate);
 
     // if (this.routing.data.juridicalEntity) {
@@ -89,6 +93,15 @@ export class DocumentsComponent extends ValidationComponent implements OnInit, D
   }
 
   ngOnInit() {
+
+    this.documents = this.collectionDetails.loadDetails('collectionId', 'url');
+    console.log('collectionDetails', this.documents);
+    // .subscribe(
+    //   collectionDetails => {
+    //     console.log('collectionDetails', collectionDetails);
+    //     //  this.showPartner(collectionDetails[collectionId][0], true);
+    //   }
+    // );
     // if (this.routing.data.navTitle) {
     //   this.navTitle = this.routing.data.navTitle;
     // }

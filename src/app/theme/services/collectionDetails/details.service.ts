@@ -16,14 +16,59 @@ export class CollectionDetailsService {
    * Returns an Observable for the HTTP POST request for the JSON resource.
    * @return {string[]} The Observable for the HTTP request.
    */
-	// loadDetails(entity: string, url: string): Observable<any> {
-	// 	console.log('<<url>>>>>  ', url);
-	// 	let headers = new HttpHeaders({
-	// 		'Content-Type': 'application/json'
-	// 	});
+	loadDetails(entity: string, url: string): any { // Observable<any> {
+		console.log('<<url>>>>>  ', url);
+		// let headers = new HttpHeaders({
+		// 	'Content-Type': 'application/json'
+		// });
+		// const result = this.http.get(url).pipe(map((res) => this.extractData(res)), catchError(this.handleError));
+		const result = 
+			// {
+			//     BUID: "SOFIA|SOFIA|NEW|message-conf-mapping|2",
+			//     base: "MessageConfiguration",
+			//     collectionId: "message-applications",
+			//     endDate: "2999-12-31T00:00:00.000Z",
+			//     links: [
+			//         {
+			//             href: "https://dev.dmp-insurance.com/api/collections/message-applications/SOFIA|SOFIA|NEW|message-conf-mapping|2",
+			//             rel: "self"
+			//         },
+			//         {
+			//             href: "https://dev.dmp-insurance.com/api/collections/message-applications",
+			//             rel: "list"
+			//         }
+			//     ],
+			//     messageNameComposition: "testFileName",
+			//     sequence: 2,
+			//     startDate: "2019-04-23T16:54:36.000Z"
+			// }
+			{
+				'rev': 'rev 1', // mocked value in input
+				'lang': 'EUR', // mocked value in select - 'EUR' is the code
 
-	// 	return this.http.get(url).pipe(map((res) => this.extractData(res)), catchError(this.handleError));
-	// }
+
+
+				'endDate': '2022-12-31T11:26:35.000Z',
+				'sequence': 1,
+				'lastGeneratedVersion': 1,
+				'lastGeneratedDate': '2019-04-15T11:26:35.000Z',
+				'messageNameComposition': '^ADSS_IN.*',
+				'thirdPartyRef': {
+					'id': 'SOFIA|AXOS|juridical-entity',
+					'collectionName': 'juridical-entity'
+				},
+				'administratorRef': {
+					'id': 'SOFIA|AXIS|juridical-entity',
+					'collectionName': 'juridical-entity'
+				},
+				'juridicalEntityRef': {
+					'id': 'SOFIA|SOFIA|juridical-entity',
+					'collectionName': 'juridical-entity'
+				}
+			}
+		;
+		return result;
+	}
 
 	/**
   */
