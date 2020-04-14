@@ -4,10 +4,33 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "rimraf": "rimraf",
+    "wintersmith": "wintersmith",
+    "changelog": "standard-changelog",
+    "start:hmr": "ng serve --hmr",
+    "start:aot": "ng serve --aot",
+    "start:prod": "ng serve --prod",
+    "start:prod:aot": "ng serve --prod --aot",
+    "build": "npm run clean:dist && ng build --base-href='/ui/home/'",
+    "build:prod": "npm run build -- --prod",
+    "build:prod:aot": "npm run build:prod -- --aot",
+    "build:ci": "npm run build:prod && npm run build:prod:aot",
+    "build:demo": "npm run build:prod:aot",
+    "upgrade": "ng update @angular/cli",
+    "test:coverage": "npm run clean:coverage && ng test -sr -cc",
+    "lint:styles": "stylelint ./src/app/**/*.scss",
+    "lint:ci": "npm run lint && npm run lint:styles",
+    "pree2e": "webdriver-manager update --standalone false --gecko false",
+    "clean": "npm cache clean && npm run rimraf -- node_modules doc typings coverage dist",
+    "clean:dist": "npm run rimraf -- dist",
+    "clean:coverage": "npm run rimraf -- coverage",
+    "docs:build": "wintersmith build -C docs -o build/ng2-admin",
+    "docs:deploy": "npm run docs:build && gh-pages -d docs/build -r git@github.com:akveo/akveo.github.io.git -b master",
+    "docs:serve": "wintersmith preview -C docs",
+    "sonar-scanner": "node_modules/sonar-scanner/bin/sonar-scanner"
   },
   "private": true,
   "dependencies": {
@@ -41,6 +64,7 @@
     "roboto-fontface": "0.10.0"
   },
   "devDependencies": {
+    "rimraf": "3.0.2",
     "@angular-devkit/build-angular": "~0.800.6",
     "@angular/cli": "^8.3.25",
     "@angular/compiler-cli": "^8.2.14",
